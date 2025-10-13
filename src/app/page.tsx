@@ -43,11 +43,11 @@ export default function Home() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ position: "relative", padding: "120px 0 80px" }} id="top">
+      <section style={{ position: "relative", padding: "clamp(60px, 8vw, 120px) 0 clamp(40px, 6vw, 80px)" }} id="top">
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
-          <div className="grid" style={{ alignItems: "center" }}>
-            <Reveal style={{ gridColumn: "span 7" }}>
-            <div>
+          <div className="heroGrid">
+            <Reveal>
+            <div className="heroContent">
               <div
                 className="glass"
                 style={{
@@ -60,18 +60,11 @@ export default function Home() {
               >
                 Didier Ngoyi Ngubu
               </div>
-              <h1
-                style={{
-                  fontSize: 56,
-                  lineHeight: 1.05,
-                  letterSpacing: -0.02,
-                  marginBottom: 16,
-                }}
-              >
+              <h1 className="heroTitle">
                 Entrepreneur, Leader de la jeunesse, Citoyen engagé
               </h1>
-              <p style={{ color: "var(--muted)", maxWidth: 720 }}>
-                Président de l’ONG CONGO LEADERSHIP • Initiateur de la plate-forme GÉNÉRATION IMPACT • CEO de BIOTECK AFRICA GROUP • Écrivain & Conférencier.
+              <p className="heroSubtitle" style={{ color: "var(--muted)", maxWidth: 720 }}>
+                Président de l'ONG CONGO LEADERSHIP • Initiateur de la plate-forme GÉNÉRATION IMPACT • CEO de BIOTECK AFRICA GROUP • Écrivain & Conférencier.
               </p>
               <div className="actions" style={{ marginTop: 24 }}>
                 <Link href="#contact" className="btn btnPrimary">
@@ -83,9 +76,9 @@ export default function Home() {
               </div>
             </div>
             </Reveal>
-            <Reveal delay={150} style={{ gridColumn: "span 5" }}>
-            <div>
-              <div style={{ position: "relative", height: 420 }} className="glass">
+            <Reveal delay={150}>
+            <div className="heroImage">
+              <div className="glass" style={{ position: "relative", height: "100%" }}>
                 <div style={{ position: "absolute", inset: 0, borderRadius: 16, overflow: "hidden" }}>
                   <Image src={heroImages[0]} alt="Didier Ngoyi" fill style={{ objectFit: "cover" }} priority />
                 </div>
@@ -154,22 +147,22 @@ export default function Home() {
       </section>
 
       {/* À propos & Mission */}
-      <section id="about" style={{ padding: "40px 0 20px" }}>
+      <section id="about" style={{ padding: "clamp(30px, 5vw, 40px) 0 clamp(15px, 3vw, 20px)" }}>
         <div className="container">
           <div className="grid">
-            <Reveal style={{ gridColumn: "span 6" }}>
+            <Reveal>
             <div>
               <h2 className="sectionTitle">À propos</h2>
               <p className="sectionSub" style={{ marginTop: 8 }}>
-                Issu de Kinshasa (RDC), j’ai choisi de mettre mon énergie et mon expérience au service d’une cause qui me tient à cœur : aider la jeunesse à devenir un moteur du changement.
+                Issu de Kinshasa (RDC), j'ai choisi de mettre mon énergie et mon expérience au service d'une cause qui me tient à cœur : aider la jeunesse à devenir un moteur du changement.
               </p>
             </div>
             </Reveal>
-            <Reveal delay={120} style={{ gridColumn: "span 6" }}>
+            <Reveal delay={120}>
             <div>
               <div className="glass card" style={{ padding: 20, borderRadius: 16 }}>
                 <p style={{ color: "var(--muted)" }}>
-                  À travers mes projets entrepreneuriaux, mes actions sociales et mon engagement citoyen, je porte une voix : celle d’une jeunesse debout, qui croit en elle-même, qui agit, qui innove et qui construit un Congo meilleur.
+                  À travers mes projets entrepreneuriaux, mes actions sociales et mon engagement citoyen, je porte une voix : celle d'une jeunesse debout, qui croit en elle-même, qui agit, qui innove et qui construit un Congo meilleur.
                 </p>
               </div>
             </div>
@@ -179,7 +172,7 @@ export default function Home() {
       </section>
 
       {/* Leadership & Rôles */}
-      <section id="roles" style={{ padding: "60px 0" }}>
+      <section id="roles" style={{ padding: "clamp(40px, 6vw, 60px) 0" }}>
         <div className="container">
           <h2 className="sectionTitle">Leadership & Rôles</h2>
           <p className="sectionSub" style={{ marginBottom: 24 }}>
@@ -188,12 +181,12 @@ export default function Home() {
           <div className="grid">
             {[
               {
-                title: "Président de l’ONG CONGO LEADERSHIP",
-                desc: "Initiatives d’impact social pour former et responsabiliser la jeunesse congolaise.",
+                title: "Président de l'ONG CONGO LEADERSHIP",
+                desc: "Initiatives d'impact social pour former et responsabiliser la jeunesse congolaise.",
               },
               {
                 title: "Initiateur de GÉNÉRATION IMPACT",
-                desc: "Plateforme de mobilisation et d’action pour une jeunesse qui ose et construit.",
+                desc: "Plateforme de mobilisation et d'action pour une jeunesse qui ose et construit.",
               },
               {
                 title: "CEO de BIOTECK AFRICA GROUP",
@@ -201,10 +194,10 @@ export default function Home() {
               },
               {
                 title: "Écrivain & Conférencier",
-                desc: "Transmission d’idées, de valeurs et d’expériences pour inspirer et former.",
+                desc: "Transmission d'idées, de valeurs et d'expériences pour inspirer et former.",
               },
             ].map((card, i) => (
-              <Reveal key={card.title} delay={i * 80} style={{ gridColumn: "span 3" }}>
+              <Reveal key={card.title} delay={i * 80}>
                 <div>
                   <div className="glass card" style={{ padding: 20, borderRadius: 16, height: "100%" }}>
                     <h3 style={{ fontSize: 18, marginBottom: 8 }}>{card.title}</h3>
@@ -218,17 +211,17 @@ export default function Home() {
       </section>
 
       {/* Projets & Initiatives */}
-      <section id="projets" style={{ padding: "60px 0" }}>
+      <section id="projets" style={{ padding: "clamp(40px, 6vw, 60px) 0" }}>
         <div className="container">
           <h2 className="sectionTitle">Projets & Initiatives</h2>
           <p className="sectionSub" style={{ marginBottom: 24 }}>
             Quelques actions phares au service de la jeunesse et du pays
           </p>
-          <div className="grid">
+          <div className="galleryGrid">
             {projectImagesOrdered.map((src, i) => (
-              <Reveal key={src} delay={i * 90} style={{ gridColumn: "span 4" }}>
+              <Reveal key={src} delay={i * 90}>
                 <div>
-                  <div style={{ position: "relative", height: 280 }} className="glass card">
+                  <div style={{ position: "relative", aspectRatio: "4/3" }} className="glass card">
                     <div style={{ position: "absolute", inset: 0, borderRadius: 16, overflow: "hidden" }}>
                       <Image src={src} alt="Projet" fill style={{ objectFit: "cover" }} />
                     </div>

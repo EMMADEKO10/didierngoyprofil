@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -39,14 +40,33 @@ export default function Header() {
         }}
       >
         <Link href="#top" style={{ fontWeight: 700, letterSpacing: -0.2 }}>Didier Ngoyi</Link>
-        <div className="navLinks" style={{ display: "flex", gap: 10, overflowX: "auto" }}>
-          <a href="#about" className="btn" style={{ height: 40, padding: "0 14px" }}>À propos</a>
-          <a href="#roles" className="btn" style={{ height: 40, padding: "0 14px" }}>Rôles</a>
-          <a href="#projets" className="btn" style={{ height: 40, padding: "0 14px" }}>Projets</a>
-          <a href="#livres" className="btn" style={{ height: 40, padding: "0 14px" }}>Livres</a>
-          <a href="#galerie" className="btn" style={{ height: 40, padding: "0 14px" }}>Galerie</a>
-          <a href="#contact" className="btn btnPrimary" style={{ height: 40, padding: "0 14px" }}>Contact</a>
+        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <div className="navLinks" style={{ display: "flex", gap: 10, overflowX: "auto" }}>
+            <a href="#about" className="btn" style={{ height: 40, padding: "0 14px" }}>À propos</a>
+            <a href="#roles" className="btn" style={{ height: 40, padding: "0 14px" }}>Rôles</a>
+            <a href="#projets" className="btn" style={{ height: 40, padding: "0 14px" }}>Projets</a>
+            <a href="#livres" className="btn" style={{ height: 40, padding: "0 14px" }}>Livres</a>
+            <a href="#galerie" className="btn" style={{ height: 40, padding: "0 14px" }}>Galerie</a>
+            <a href="#contact" className="btn btnPrimary" style={{ height: 40, padding: "0 14px" }}>Contact</a>
+          </div>
+          <button 
+            className="mobileMenuBtn"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Menu"
+          >
+            ☰
+          </button>
         </div>
+        {mobileMenuOpen && (
+          <div className="navLinksMobile">
+            <a href="#about" className="btn" onClick={() => setMobileMenuOpen(false)}>À propos</a>
+            <a href="#roles" className="btn" onClick={() => setMobileMenuOpen(false)}>Rôles</a>
+            <a href="#projets" className="btn" onClick={() => setMobileMenuOpen(false)}>Projets</a>
+            <a href="#livres" className="btn" onClick={() => setMobileMenuOpen(false)}>Livres</a>
+            <a href="#galerie" className="btn" onClick={() => setMobileMenuOpen(false)}>Galerie</a>
+            <a href="#contact" className="btn btnPrimary" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+          </div>
+        )}
       </nav>
     </header>
   );
