@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
+import { useState } from "react";
+import Lightbox from "./Lightbox";
 
 const heroImages = [
   "/hirosection/WhatsApp Image 2025-10-13 à 10.24.43_c14af50d.jpg",
@@ -37,6 +39,7 @@ const projectImagesOrdered = [...projectImages].sort(byName);
 const galleryImagesOrdered = [...galleryImages].sort(byName);
 
 export default function Home() {
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   return (
     <main>
       {/* Hero */}
@@ -55,7 +58,7 @@ export default function Home() {
                   color: "var(--muted)",
                 }}
               >
-                Portfolio de Didier Ngoyi Ngubu
+                Didier Ngoyi Ngubu
               </div>
               <h1
                 style={{
@@ -91,7 +94,7 @@ export default function Home() {
             </Reveal>
           </div>
         </div>
-        {/* subtle background orbs */}
+        {/* subtle background orbs + animated gradient */}
         <div
             aria-hidden
           style={{
@@ -100,6 +103,7 @@ export default function Home() {
             overflow: "hidden",
           }}
         >
+          <div className="heroGradient" />
           <div
             style={{
               position: "absolute",
@@ -137,7 +141,7 @@ export default function Home() {
               const src = encodeURI(rawSrc);
               return (
                 <Reveal key={src} delay={(idx % 6) * 70}>
-                  <div className="glass card" style={{ position: "relative", paddingTop: "140%", borderRadius: 16 }}>
+                  <div className="glass card" style={{ position: "relative", paddingTop: "140%", borderRadius: 16, cursor: "zoom-in" }} onClick={() => setLightboxSrc(src)}>
                     <div style={{ position: "absolute", inset: 0, borderRadius: 16, overflow: "hidden" }}>
                       <Image src={src} alt={`Galerie ${idx + 1}`} fill style={{ objectFit: "cover" }} />
                     </div>
@@ -287,6 +291,7 @@ export default function Home() {
       </footer>
     </div>
       </section>
+      {lightboxSrc && <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />}
     </main>
   );
 }

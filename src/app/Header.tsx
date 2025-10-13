@@ -17,11 +17,13 @@ export default function Header() {
     <header
       className="glass"
       style={{
-        position: "sticky",
-        top: 12,
-        zIndex: 60,
+        position: "fixed",
+        top: 10,
+        left: 0,
+        right: 0,
+        zIndex: 80,
         borderRadius: 16,
-        margin: "12px auto 0",
+        margin: "10px auto 0",
         width: "min(1100px, 92%)",
         transition: "box-shadow .2s ease, transform .2s ease",
         boxShadow: scrolled ? "var(--glow)" : "none",
