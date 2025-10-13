@@ -257,6 +257,11 @@ html[data-theme="light"] .glass {
 
 /* Tablet breakpoint */
 @media (min-width: 769px) and (max-width: 1023px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
   .heroGrid {
     grid-template-columns: 1fr 1fr;
     gap: 48px;
@@ -277,10 +282,25 @@ html[data-theme="light"] .glass {
   .mobileMenuBtn {
     display: none;
   }
+  
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .galleryGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
 }
 
 /* Desktop breakpoint */
 @media (min-width: 1024px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
   .heroGrid {
     grid-template-columns: 7fr 5fr;
     gap: 60px;
@@ -292,6 +312,16 @@ html[data-theme="light"] .glass {
   
   .mobileMenuBtn {
     display: none;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+  
+  .galleryGrid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
   }
 }
 

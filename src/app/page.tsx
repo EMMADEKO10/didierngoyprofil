@@ -64,7 +64,7 @@ export default function Home() {
                 Entrepreneur, Leader de la jeunesse, Citoyen engagé
               </h1>
               <p className="heroSubtitle" style={{ color: "var(--muted)", maxWidth: 720 }}>
-                Président de l'ONG CONGO LEADERSHIP • Initiateur de la plate-forme GÉNÉRATION IMPACT • CEO de BIOTECK AFRICA GROUP • Écrivain & Conférencier.
+                Président de l&apos;ONG CONGO LEADERSHIP • Initiateur de la plate-forme GÉNÉRATION IMPACT • CEO de BIOTECK AFRICA GROUP • Écrivain & Conférencier.
               </p>
               <div className="actions" style={{ marginTop: 24 }}>
                 <Link href="#contact" className="btn btnPrimary">
@@ -125,21 +125,21 @@ export default function Home() {
       </section>
 
       {/* Galerie Photo */}
-      <section id="galerie" style={{ padding: "20px 0 60px" }}>
+      <section id="galerie" style={{ padding: "clamp(20px, 4vw, 40px) 0 clamp(40px, 6vw, 60px)" }}>
         <div className="container">
           <h2 className="sectionTitle">Galerie</h2>
-          <p className="sectionSub" style={{ marginBottom: 24 }}>Moments d’actions, d’échanges et d’inspiration</p>
+          <p className="sectionSub" style={{ marginBottom: 24 }}>Moments d&apos;actions, d&apos;échanges et d&apos;inspiration</p>
           <div className="galleryGrid">
             {galleryImagesOrdered.map((rawSrc, idx) => {
               const src = encodeURI(rawSrc);
               return (
                 <Reveal key={src} delay={(idx % 6) * 70}>
-                  <div className="glass card" style={{ position: "relative", paddingTop: "140%", borderRadius: 16, cursor: "zoom-in" }} onClick={() => setLightboxSrc(src)}>
+                  <div className="glass card" style={{ position: "relative", aspectRatio: "4/5", borderRadius: 16, cursor: "zoom-in" }} onClick={() => setLightboxSrc(src)}>
                     <div style={{ position: "absolute", inset: 0, borderRadius: 16, overflow: "hidden" }}>
                       <Image src={src} alt={`Galerie ${idx + 1}`} fill style={{ objectFit: "cover" }} />
                     </div>
                   </div>
-              </Reveal>
+                </Reveal>
               );
             })}
           </div>
@@ -154,7 +154,7 @@ export default function Home() {
             <div>
               <h2 className="sectionTitle">À propos</h2>
               <p className="sectionSub" style={{ marginTop: 8 }}>
-                Issu de Kinshasa (RDC), j'ai choisi de mettre mon énergie et mon expérience au service d'une cause qui me tient à cœur : aider la jeunesse à devenir un moteur du changement.
+                Issu de Kinshasa (RDC), j&apos;ai choisi de mettre mon énergie et mon expérience au service d&apos;une cause qui me tient à cœur : aider la jeunesse à devenir un moteur du changement.
               </p>
             </div>
             </Reveal>
@@ -162,7 +162,7 @@ export default function Home() {
             <div>
               <div className="glass card" style={{ padding: 20, borderRadius: 16 }}>
                 <p style={{ color: "var(--muted)" }}>
-                  À travers mes projets entrepreneuriaux, mes actions sociales et mon engagement citoyen, je porte une voix : celle d'une jeunesse debout, qui croit en elle-même, qui agit, qui innove et qui construit un Congo meilleur.
+                  À travers mes projets entrepreneuriaux, mes actions sociales et mon engagement citoyen, je porte une voix : celle d&apos;une jeunesse debout, qui croit en elle-même, qui agit, qui innove et qui construit un Congo meilleur.
                 </p>
               </div>
             </div>
@@ -234,25 +234,25 @@ export default function Home() {
       </section>
 
       {/* Livres & Conférences */}
-      <section id="livres" style={{ padding: "60px 0" }}>
+      <section id="livres" style={{ padding: "clamp(40px, 6vw, 60px) 0" }}>
         <div className="container">
           <div className="grid" style={{ alignItems: "center" }}>
-            <Reveal style={{ gridColumn: "span 5" }}>
+            <Reveal>
             <div>
-              <div style={{ position: "relative", height: 360 }} className="glass">
+              <div style={{ position: "relative", aspectRatio: "4/3" }} className="glass">
                 <div style={{ position: "absolute", inset: 0, borderRadius: 16, overflow: "hidden" }}>
                   <Image src="/livre/livre.jpg" alt="Conférence" fill style={{ objectFit: "cover" }} />
                 </div>
               </div>
             </div>
             </Reveal>
-            <Reveal delay={140} style={{ gridColumn: "span 7" }}>
+            <Reveal delay={140}>
             <div>
               <h2 className="sectionTitle">Livres & Conférences</h2>
               <p className="sectionSub" style={{ marginBottom: 16 }}>
                 Interventions inspirantes et publications pour éveiller, former et orienter la jeunesse.
               </p>
-              <div style={{ display: "flex", gap: 12 }}>
+              <div className="actions">
                 <Link href="#contact" className="btn btnPrimary">Inviter pour une conférence</Link>
                 <Link href="#contact" className="btn">Demander la bibliographie</Link>
               </div>
@@ -263,26 +263,26 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section id="contact" style={{ padding: "60px 0 100px" }}>
+      <section id="contact" style={{ padding: "clamp(40px, 6vw, 60px) 0 clamp(60px, 8vw, 100px)" }}>
         <div className="container">
           <div className="glass" style={{ borderRadius: 20, padding: 24 }}>
             <div className="grid" style={{ alignItems: "center" }}>
-              <div style={{ gridColumn: "span 8" }}>
+              <div>
                 <h2 className="sectionTitle">Travaillons ensemble</h2>
                 <p className="sectionSub" style={{ marginBottom: 16 }}>
                   Vous avez un projet, une initiative sociale ou un événement ? Contactez-moi.
                 </p>
               </div>
-              <div style={{ gridColumn: "span 4", display: "flex", justifyContent: "flex-end", gap: 12 }}>
+              <div className="actions">
                 <a href="mailto:contact@didierngoy.com" className="btn btnPrimary">Envoyer un email</a>
                 <a href="https://wa.me/243821355601" target="_blank" rel="noreferrer" className="btn">WhatsApp</a>
               </div>
             </div>
           </div>
-          <footer style={{ marginTop: 24, color: "var(--muted)", fontSize: 14 }}>
+          <footer style={{ marginTop: 24, color: "var(--muted)", fontSize: 14, textAlign: "center" }}>
             © {new Date().getFullYear()} Didier Ngoyi Ngubu. Tous droits réservés.
-      </footer>
-    </div>
+          </footer>
+        </div>
       </section>
       {lightboxSrc && <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />}
     </main>
