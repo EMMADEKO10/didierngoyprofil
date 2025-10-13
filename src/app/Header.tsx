@@ -39,15 +39,18 @@ export default function Header() {
           padding: "10px 14px",
         }}
       >
-        <Link href="#top" style={{ fontWeight: 700, letterSpacing: -0.2 }}>Didier Ngoyi</Link>
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div className="navLinks" style={{ display: "flex", gap: 10, overflowX: "auto" }}>
-            <a href="#about" className="btn" style={{ height: 40, padding: "0 14px" }}>À propos</a>
-            <a href="#roles" className="btn" style={{ height: 40, padding: "0 14px" }}>Rôles</a>
-            <a href="#projets" className="btn" style={{ height: 40, padding: "0 14px" }}>Projets</a>
-            <a href="#livres" className="btn" style={{ height: 40, padding: "0 14px" }}>Livres</a>
-            <a href="#galerie" className="btn" style={{ height: 40, padding: "0 14px" }}>Galerie</a>
-            <a href="#contact" className="btn btnPrimary" style={{ height: 40, padding: "0 14px" }}>Contact</a>
+        <Link href="#top" className="headerLogo" style={{ fontWeight: 700, letterSpacing: -0.2, whiteSpace: "nowrap" }}>
+          <span className="logoFull">Didier Ngoyi</span>
+          <span className="logoShort">D. Ngoyi</span>
+        </Link>
+        <div className="headerNav">
+          <div className="navLinks">
+            <a href="#about" className="btn navBtn">À propos</a>
+            <a href="#roles" className="btn navBtn">Rôles</a>
+            <a href="#projets" className="btn navBtn">Projets</a>
+            <a href="#livres" className="btn navBtn">Livres</a>
+            <a href="#galerie" className="btn navBtn">Galerie</a>
+            <a href="#contact" className="btn btnPrimary navBtn">Contact</a>
           </div>
           <button 
             className="mobileMenuBtn"
