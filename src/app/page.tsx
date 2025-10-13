@@ -73,7 +73,7 @@ export default function Home() {
               <p style={{ color: "var(--muted)", maxWidth: 720 }}>
                 Président de l’ONG CONGO LEADERSHIP • Initiateur de la plate-forme GÉNÉRATION IMPACT • CEO de BIOTECK AFRICA GROUP • Écrivain & Conférencier.
               </p>
-              <div style={{ display: "flex", gap: 12, marginTop: 24 }}>
+              <div className="actions" style={{ marginTop: 24 }}>
                 <Link href="#contact" className="btn btnPrimary">
                   Me contacter
                 </Link>

@@ -39,7 +39,7 @@ export default function Header() {
         }}
       >
         <Link href="#top" style={{ fontWeight: 700, letterSpacing: -0.2 }}>Didier Ngoyi</Link>
-        <div style={{ display: "flex", gap: 10 }}>
+        <div className="navLinks" style={{ display: "flex", gap: 10, overflowX: "auto" }}>
           <a href="#about" className="btn" style={{ height: 40, padding: "0 14px" }}>À propos</a>
           <a href="#roles" className="btn" style={{ height: 40, padding: "0 14px" }}>Rôles</a>
           <a href="#projets" className="btn" style={{ height: 40, padding: "0 14px" }}>Projets</a>
