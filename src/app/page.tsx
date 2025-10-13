@@ -2,48 +2,49 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Reveal from "./Reveal";
 
 const heroImages = [
-  "/484934957_1061141606033766_523380685090581092_n.jpg",
-  "/558692288_1222148709933054_4229808147326803317_n.jpg",
-  "/559121198_1222148909933034_2146408349376916210_n.jpg",
+  "/hirosection/WhatsApp Image 2025-10-13 à 10.24.43_c14af50d.jpg",
+];
+
+const projectImages = [
+  "/projet/WhatsApp Image 2025-10-13 à 17.16.48_46f69da3.jpg",
+  "/projet/WhatsApp Image 2025-10-13 à 17.21.13_8115392f.jpg",
+  "/projet/WhatsApp Image 2025-10-13 à 17.21.45_d5e602f4.jpg",
+  "/projet/WhatsApp Image 2025-10-13 à 17.22.02_d9c6583c.jpg",
+  "/projet/WhatsApp Image 2025-10-13 à 17.22.42_3d152655.jpg",
+  "/projet/WhatsApp Image 2025-10-13 à 17.23.32_ea9e07dd.jpg",
+  "/projet/WhatsApp Image 2025-10-13 à 17.23.55_3b9939f0.jpg",
+  "/projet/WhatsApp Image 2025-10-13 à 17.24.21_7b5d5f41.jpg",
+  "/projet/WhatsApp Image 2025-10-13 à 17.25.33_9efeb24d.jpg",
 ];
 
 const galleryImages = [
-  "/484543400_1061141416033785_7515035370954843507_n (1).jpg",
-  "/484934957_1061141606033766_523380685090581092_n.jpg",
-  "/484265619_1061141466033780_810270369698681610_n.jpg",
-  "/484543400_1061141416033785_7515035370954843507_n.jpg",
-  "/485719826_1066033182211275_7683936925466589761_n.jpg",
-  "/541428021_1191573069657285_7679498536551268667_n.jpg",
-  "/540792956_1191574599657132_6910296240050529151_n.jpg",
-  "/557978692_1222147466599845_6621739788798749420_n (1).jpg",
-  "/558212125_1222146659933259_3399914050264648036_n.jpg",
-  "/558108300_1222148529933072_72893147480226747_n.jpg",
-  "/557772313_1222146913266567_1373992692175798815_n.jpg",
-  "/558692288_1222148709933054_4229808147326803317_n.jpg",
-  "/559121198_1222148909933034_2146408349376916210_n.jpg",
-  "/561277280_1222147326599859_8312679864147065488_n.jpg",
-  "/557978692_1222147466599845_6621739788798749420_n.jpg",
-  "/WhatsApp Image 2025-10-13 à 10.24.46_fad26780.jpg",
-  "/WhatsApp Image 2025-10-13 à 10.24.46_3129f7eb.jpg",
-  "/WhatsApp Image 2025-10-13 à 10.24.45_3714ef8b.jpg",
-  "/WhatsApp Image 2025-10-13 à 10.24.45_788b91a1.jpg",
-  "/WhatsApp Image 2025-10-13 à 10.24.44_0ea2a76c.jpg",
-  "/WhatsApp Image 2025-10-13 à 10.24.44_f9434a6c.jpg",
-  "/WhatsApp Image 2025-10-13 à 10.24.43_8a33c6a9.jpg",
-  "/WhatsApp Image 2025-10-13 à 10.24.43_cc1ad471.jpg",
-  "/WhatsApp Image 2025-10-13 à 10.24.43_c14af50d.jpg",
+  "/galerie/484543400_1061141416033785_7515035370954843507_n (1).jpg",
+  "/galerie/557772313_1222146913266567_1373992692175798815_n.jpg",
+  "/galerie/557978692_1222147466599845_6621739788798749420_n.jpg",
+  "/galerie/558692288_1222148709933054_4229808147326803317_n.jpg",
+  "/galerie/WhatsApp Image 2025-10-13 à 10.24.43_c14af50d.jpg",
+  "/galerie/WhatsApp Image 2025-10-13 à 10.24.43_cc1ad471.jpg",
+  "/galerie/WhatsApp Image 2025-10-13 à 10.24.45_788b91a1.jpg",
+  "/galerie/WhatsApp Image 2025-10-13 à 10.24.46_3129f7eb.jpg",
 ];
+
+// Respect the directory order by sorting by filename (stable, locale-aware)
+const byName = (a: string, b: string) => a.localeCompare(b, "fr", { numeric: true, sensitivity: "base" });
+const projectImagesOrdered = [...projectImages].sort(byName);
+const galleryImagesOrdered = [...galleryImages].sort(byName);
 
 export default function Home() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ position: "relative", padding: "120px 0 80px" }}>
+      <section style={{ position: "relative", padding: "120px 0 80px" }} id="top">
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
           <div className="grid" style={{ alignItems: "center" }}>
-            <div style={{ gridColumn: "span 7" }} className="fadeInUp">
+            <Reveal style={{ gridColumn: "span 7" }}>
+            <div>
               <div
                 className="glass"
                 style={{
@@ -66,10 +67,10 @@ export default function Home() {
               >
                 Entrepreneur, Leader de la jeunesse, Citoyen engagé
               </h1>
-              <p className="fadeInUp" style={{ color: "var(--muted)", maxWidth: 720 }}>
+              <p style={{ color: "var(--muted)", maxWidth: 720 }}>
                 Président de l’ONG CONGO LEADERSHIP • Initiateur de la plate-forme GÉNÉRATION IMPACT • CEO de BIOTECK AFRICA GROUP • Écrivain & Conférencier.
               </p>
-              <div style={{ display: "flex", gap: 12, marginTop: 24 }} className="fadeInUp">
+              <div style={{ display: "flex", gap: 12, marginTop: 24 }}>
                 <Link href="#contact" className="btn btnPrimary">
                   Me contacter
                 </Link>
@@ -78,18 +79,21 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div style={{ gridColumn: "span 5" }} className="fadeInUp">
+            </Reveal>
+            <Reveal delay={150} style={{ gridColumn: "span 5" }}>
+            <div>
               <div style={{ position: "relative", height: 420 }} className="glass">
                 <div style={{ position: "absolute", inset: 0, borderRadius: 16, overflow: "hidden" }}>
                   <Image src={heroImages[0]} alt="Didier Ngoyi" fill style={{ objectFit: "cover" }} priority />
                 </div>
               </div>
             </div>
+            </Reveal>
           </div>
         </div>
         {/* subtle background orbs */}
         <div
-          aria-hidden
+            aria-hidden
           style={{
             position: "absolute",
             inset: 0,
@@ -128,17 +132,17 @@ export default function Home() {
         <div className="container">
           <h2 className="sectionTitle">Galerie</h2>
           <p className="sectionSub" style={{ marginBottom: 24 }}>Moments d’actions, d’échanges et d’inspiration</p>
-          <div className="grid">
-            {galleryImages.map((rawSrc, idx) => {
+          <div className="galleryGrid">
+            {galleryImagesOrdered.map((rawSrc, idx) => {
               const src = encodeURI(rawSrc);
               return (
-              <div key={src} style={{ gridColumn: "span 4" }} className="fadeInUp">
-                <div style={{ position: "relative", height: idx % 3 === 0 ? 320 : 220 }} className="glass">
-                  <div style={{ position: "absolute", inset: 0, borderRadius: 16, overflow: "hidden" }}>
-                    <Image src={src} alt={`Galerie ${idx + 1}`} fill style={{ objectFit: "cover" }} />
+                <Reveal key={src} delay={(idx % 6) * 70}>
+                  <div className="glass card" style={{ position: "relative", paddingTop: "140%", borderRadius: 16 }}>
+                    <div style={{ position: "absolute", inset: 0, borderRadius: 16, overflow: "hidden" }}>
+                      <Image src={src} alt={`Galerie ${idx + 1}`} fill style={{ objectFit: "cover" }} />
+                    </div>
                   </div>
-                </div>
-              </div>
+              </Reveal>
               );
             })}
           </div>
@@ -149,19 +153,23 @@ export default function Home() {
       <section id="about" style={{ padding: "40px 0 20px" }}>
         <div className="container">
           <div className="grid">
-            <div style={{ gridColumn: "span 6" }}>
+            <Reveal style={{ gridColumn: "span 6" }}>
+            <div>
               <h2 className="sectionTitle">À propos</h2>
               <p className="sectionSub" style={{ marginTop: 8 }}>
                 Issu de Kinshasa (RDC), j’ai choisi de mettre mon énergie et mon expérience au service d’une cause qui me tient à cœur : aider la jeunesse à devenir un moteur du changement.
               </p>
             </div>
-            <div style={{ gridColumn: "span 6" }}>
-              <div className="glass" style={{ padding: 20, borderRadius: 16 }}>
+            </Reveal>
+            <Reveal delay={120} style={{ gridColumn: "span 6" }}>
+            <div>
+              <div className="glass card" style={{ padding: 20, borderRadius: 16 }}>
                 <p style={{ color: "var(--muted)" }}>
                   À travers mes projets entrepreneuriaux, mes actions sociales et mon engagement citoyen, je porte une voix : celle d’une jeunesse debout, qui croit en elle-même, qui agit, qui innove et qui construit un Congo meilleur.
                 </p>
               </div>
             </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -192,12 +200,14 @@ export default function Home() {
                 desc: "Transmission d’idées, de valeurs et d’expériences pour inspirer et former.",
               },
             ].map((card, i) => (
-              <div key={card.title} style={{ gridColumn: "span 3" }} className="fadeInUp">
-                <div className="glass" style={{ padding: 20, borderRadius: 16, height: "100%" }}>
-                  <h3 style={{ fontSize: 18, marginBottom: 8 }}>{card.title}</h3>
-                  <p style={{ color: "var(--muted)" }}>{card.desc}</p>
+              <Reveal key={card.title} delay={i * 80} style={{ gridColumn: "span 3" }}>
+                <div>
+                  <div className="glass card" style={{ padding: 20, borderRadius: 16, height: "100%" }}>
+                    <h3 style={{ fontSize: 18, marginBottom: 8 }}>{card.title}</h3>
+                    <p style={{ color: "var(--muted)" }}>{card.desc}</p>
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -211,14 +221,16 @@ export default function Home() {
             Quelques actions phares au service de la jeunesse et du pays
           </p>
           <div className="grid">
-            {heroImages.map((src) => (
-              <div key={src} style={{ gridColumn: "span 4" }} className="fadeInUp">
-                <div style={{ position: "relative", height: 280 }} className="glass">
-                  <div style={{ position: "absolute", inset: 0, borderRadius: 16, overflow: "hidden" }}>
-                    <Image src={src} alt="Projet" fill style={{ objectFit: "cover" }} />
+            {projectImagesOrdered.map((src, i) => (
+              <Reveal key={src} delay={i * 90} style={{ gridColumn: "span 4" }}>
+                <div>
+                  <div style={{ position: "relative", height: 280 }} className="glass card">
+                    <div style={{ position: "absolute", inset: 0, borderRadius: 16, overflow: "hidden" }}>
+                      <Image src={src} alt="Projet" fill style={{ objectFit: "cover" }} />
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -228,14 +240,17 @@ export default function Home() {
       <section id="livres" style={{ padding: "60px 0" }}>
         <div className="container">
           <div className="grid" style={{ alignItems: "center" }}>
-            <div style={{ gridColumn: "span 5" }} className="fadeInUp">
+            <Reveal style={{ gridColumn: "span 5" }}>
+            <div>
               <div style={{ position: "relative", height: 360 }} className="glass">
                 <div style={{ position: "absolute", inset: 0, borderRadius: 16, overflow: "hidden" }}>
-                  <Image src="/557772313_1222146913266567_1373992692175798815_n.jpg" alt="Conférence" fill style={{ objectFit: "cover" }} />
+                  <Image src="/livre/livre.jpg" alt="Conférence" fill style={{ objectFit: "cover" }} />
                 </div>
               </div>
             </div>
-            <div style={{ gridColumn: "span 7" }}>
+            </Reveal>
+            <Reveal delay={140} style={{ gridColumn: "span 7" }}>
+            <div>
               <h2 className="sectionTitle">Livres & Conférences</h2>
               <p className="sectionSub" style={{ marginBottom: 16 }}>
                 Interventions inspirantes et publications pour éveiller, former et orienter la jeunesse.
@@ -245,6 +260,7 @@ export default function Home() {
                 <Link href="#contact" className="btn">Demander la bibliographie</Link>
               </div>
             </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -262,14 +278,14 @@ export default function Home() {
               </div>
               <div style={{ gridColumn: "span 4", display: "flex", justifyContent: "flex-end", gap: 12 }}>
                 <a href="mailto:contact@didierngoy.com" className="btn btnPrimary">Envoyer un email</a>
-                <a href="https://wa.me/243" target="_blank" rel="noreferrer" className="btn">WhatsApp</a>
+                <a href="https://wa.me/243821355601" target="_blank" rel="noreferrer" className="btn">WhatsApp</a>
               </div>
             </div>
           </div>
           <footer style={{ marginTop: 24, color: "var(--muted)", fontSize: 14 }}>
             © {new Date().getFullYear()} Didier Ngoyi Ngubu. Tous droits réservés.
-          </footer>
-        </div>
+      </footer>
+    </div>
       </section>
     </main>
   );

@@ -36,6 +36,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--foreground);
   background: radial-gradient(1200px 600px at 70% -10%, rgba(76, 201, 240, 0.06), transparent 60%),
@@ -125,6 +129,12 @@ html[data-theme="light"] .glass {
   gap: 20px;
 }
 
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
 .fadeInUp {
   opacity: 0;
   transform: translateY(14px);
@@ -148,4 +158,14 @@ html[data-theme="light"] .glass {
   .fadeInUp {
     animation: none;
   }
+}
+
+/* Card polish */
+.card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--glow);
 }
