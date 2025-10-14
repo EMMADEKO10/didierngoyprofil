@@ -38,6 +38,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -48,6 +49,8 @@ body {
   font-family: var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
 }
 
 html[data-theme="light"] body {
@@ -79,11 +82,18 @@ a {
   line-height: 1.05;
   letter-spacing: -0.02em;
   margin-bottom: 16px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--primary) 80%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .heroSubtitle {
   font-size: clamp(14px, 2.5vw, 18px);
   line-height: 1.4;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .glass {
@@ -96,6 +106,20 @@ html[data-theme="light"] .glass {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.35));
 }
 
+.heroBadge {
+  box-shadow: 0 0 20px rgba(76, 201, 240, 0.2);
+  animation: badgePulse 3s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(76, 201, 240, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(76, 201, 240, 0.4);
+  }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -106,23 +130,47 @@ html[data-theme="light"] .glass {
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.02);
   color: var(--foreground);
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.08);
   box-shadow: var(--glow);
+  border-color: rgba(76, 201, 240, 0.4);
 }
 
 .btnPrimary {
   background: linear-gradient(180deg, var(--primary), var(--primary-600));
   color: #041018;
   border: none;
+  font-weight: 600;
 }
 
 .btnPrimary:hover {
-  filter: brightness(1.05);
+  filter: brightness(1.1);
+  transform: translateY(-3px) scale(1.02);
 }
 
 .sectionTitle {
@@ -130,11 +178,19 @@ html[data-theme="light"] .glass {
   line-height: 1.2;
   letter-spacing: -0.02em;
   margin-bottom: 16px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .sectionSub {
   color: var(--muted);
   font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .grid {
@@ -147,6 +203,25 @@ html[data-theme="light"] .glass {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
+}
+
+.galleryGrid .card {
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 18px;
+}
+
+.galleryGrid .card:hover {
+  transform: scale(1.05) translateY(-4px);
+  z-index: 10;
+}
+
+.galleryCard {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.galleryCard:hover {
+  box-shadow: 0 20px 60px rgba(76, 201, 240, 0.3);
 }
 
 .actions {
@@ -308,6 +383,21 @@ html[data-theme="light"] .glass {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 16px;
   }
+  
+  /* About section tablet layout */
+  .aboutGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  
+  .aboutContent {
+    grid-column: 1;
+  }
+  
+  .aboutCard {
+    grid-column: 2;
+  }
 }
 
 /* Desktop breakpoint */
@@ -315,16 +405,19 @@ html[data-theme="light"] .glass {
   .container {
     padding-left: 0;
     padding-right: 0;
+    width: min(1300px, 94%);
   }
   
   .heroGrid {
-    grid-template-columns: 7fr 5fr;
-    gap: 60px;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: center;
   }
   
   /* Header desktop styles */
   .logoFull {
     display: block;
+    font-size: 17px;
   }
   
   .logoShort {
@@ -333,6 +426,7 @@ html[data-theme="light"] .glass {
   
   .navLinks {
     display: flex;
+    gap: 10px;
   }
   
   .navLinksMobile {
@@ -344,20 +438,234 @@ html[data-theme="light"] .glass {
   }
   
   .navBtn {
-    height: 40px;
-    padding: 0 16px;
-    font-size: 16px;
+    height: 42px;
+    padding: 0 18px;
+    font-size: 15px;
+    font-weight: 500;
   }
   
   .grid {
     grid-template-columns: repeat(12, 1fr);
-    gap: 20px;
+    gap: 28px;
   }
   
   .galleryGrid {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
   }
+  
+  /* Projects grid desktop */
+  .projectsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  
+  .projectCard .card {
+    border-radius: 18px;
+  }
+  
+  /* Desktop text improvements */
+  .heroTitle {
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  
+  .heroSubtitle {
+    font-size: 19px;
+    line-height: 1.6;
+    max-width: 680px;
+  }
+  
+  .sectionTitle {
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
+  
+  .sectionSub {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  /* Better text flow for desktop */
+  p {
+    text-align: left;
+    word-spacing: 0.05em;
+    letter-spacing: 0.01em;
+  }
+  
+  /* Prevent awkward word breaks */
+  .heroSubtitle,
+  .sectionSub {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  
+  /* About section desktop layout */
+  .aboutGrid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  
+  .aboutContent {
+    grid-column: 1;
+  }
+  
+  .aboutCard {
+    grid-column: 2;
+  }
+  
+  .aboutCard .card {
+    padding: 32px !important;
+  }
+  
+  .aboutCard p {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+  
+  /* Enhanced buttons for desktop */
+  .btn {
+    height: 52px;
+    padding: 0 28px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 16px;
+  }
+  
+  .btnPrimary {
+    box-shadow: 0 4px 24px rgba(76, 201, 240, 0.3);
+  }
+  
+  .btnPrimary:hover {
+    box-shadow: 0 6px 32px rgba(76, 201, 240, 0.4);
+  }
+  
+  /* Enhanced cards for desktop */
+  .card {
+    border-radius: 20px;
+    padding: 28px;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 48px rgba(76, 201, 240, 0.25);
+  }
+  
+  /* Hero image enhancement */
+  .heroImage {
+    aspect-ratio: 3/4;
+  }
+  
+  .heroImage .glass {
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Roles cards grid */
+  .rolesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  
+  .roleCard {
+    grid-column: span 1;
+  }
+  
+  .roleCard .card {
+    padding: 32px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .roleCard .card:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+  
+  /* Better spacing for sections */
+  section {
+    padding-top: clamp(60px, 8vw, 100px) !important;
+    padding-bottom: clamp(60px, 8vw, 100px) !important;
+  }
+  
+  /* Actions alignment */
+  .actions {
+    gap: 16px;
+    margin-top: 32px;
+  }
+  
+  /* Contact card desktop */
+  .contactCard {
+    border: 2px solid rgba(76, 201, 240, 0.2);
+    box-shadow: 0 20px 60px rgba(76, 201, 240, 0.15);
+  }
+  
+  .contactGrid {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 48px;
+  }
+  
+  /* Books section desktop */
+  .booksGrid {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+  }
+  
+  .bookImageWrapper {
+    position: relative;
+  }
+  
+  .bookImageWrapper::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: -20px;
+    background: linear-gradient(135deg, rgba(76, 201, 240, 0.15), rgba(247, 37, 133, 0.15));
+    border-radius: 20px;
+    z-index: -1;
+  }
+}
+
+/* Ultra-wide desktop (1600px+) */
+@media (min-width: 1600px) {
+  .container {
+    width: min(1400px, 90%);
+  }
+  
+  .heroTitle {
+    font-size: 72px;
+  }
+  
+  .sectionTitle {
+    font-size: 48px;
+  }
+  
+  .galleryGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* About section grid */
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.aboutContent {
+  grid-column: 1 / -1;
+}
+
+.aboutCard {
+  grid-column: 1 / -1;
+}
+
+.aboutCard p {
+  line-height: 1.6;
+  text-align: left;
 }
 
 /* Header responsive styles */
@@ -366,6 +674,11 @@ html[data-theme="light"] .glass {
   align-items: center;
   min-width: 0;
   flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+.headerLogo:hover {
+  color: var(--primary);
 }
 
 /* Very small screens */
@@ -469,12 +782,32 @@ html[data-theme="light"] .glass {
 
 /* Card polish */
 .card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(76, 201, 240, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.card:hover::before {
+  left: 100%;
 }
 
 .card:hover {
   transform: translateY(-6px);
   box-shadow: var(--glow);
+  border-color: rgba(76, 201, 240, 0.3);
 }
 
 /* Animated gradient for hero */
