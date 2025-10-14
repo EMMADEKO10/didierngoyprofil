@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ position: "relative", padding: "clamp(60px, 8vw, 120px) 0 clamp(40px, 6vw, 80px)" }} id="top">
+      <section style={{ position: "relative", padding: "clamp(50px, 6vw, 80px) 0 clamp(30px, 4vw, 50px)" }} id="top">
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
           <div className="heroGrid">
             <Reveal>
@@ -52,13 +52,13 @@ export default function Home() {
                 className="glass heroBadge"
                 style={{
                   display: "inline-block",
-                  padding: "8px 16px",
+                  padding: "6px 14px",
                   borderRadius: 999,
-                  marginBottom: 16,
+                  marginBottom: 12,
                   color: "var(--primary)",
-                  fontSize: "14px",
+                  fontSize: "13px",
                   fontWeight: 600,
-                  letterSpacing: "0.5px",
+                  letterSpacing: "0.3px",
                 }}
               >
                 ✦ Didier Ngoyi Ngu
@@ -130,7 +130,7 @@ export default function Home() {
       {/* Galerie Photo */}
       <section id="galerie" style={{ padding: "clamp(20px, 4vw, 40px) 0 clamp(40px, 6vw, 60px)" }}>
         <div className="container">
-          <div style={{ textAlign: "center", marginBottom: 48 }}>
+          <div style={{ textAlign: "center", marginBottom: 36 }}>
             <h2 className="sectionTitle">Galerie</h2>
             <p className="sectionSub" style={{ marginLeft: "auto", marginRight: "auto" }}>Moments d&apos;actions, d&apos;échanges et d&apos;inspiration</p>
           </div>
@@ -152,23 +152,54 @@ export default function Home() {
       </section>
 
       {/* À propos & Mission */}
-      <section id="about" style={{ padding: "clamp(30px, 5vw, 40px) 0 clamp(15px, 3vw, 20px)" }}>
-        <div className="container">
+      <section id="about" style={{ padding: "clamp(40px, 6vw, 60px) 0", position: "relative", overflow: "hidden" }}>
+        {/* Background decorative elements */}
+        <div style={{ position: "absolute", top: "20%", left: "-5%", width: 300, height: 300, background: "radial-gradient(circle, rgba(76, 201, 240, 0.08), transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", bottom: "10%", right: "-5%", width: 250, height: 250, background: "radial-gradient(circle, rgba(247, 37, 133, 0.06), transparent 70%)", filter: "blur(60px)", pointerEvents: "none" }} />
+        
+        <div className="container" style={{ position: "relative", zIndex: 2 }}>
           <div className="grid aboutGrid">
             <Reveal>
             <div className="aboutContent">
-              <h2 className="sectionTitle">À propos</h2>
-              <p className="sectionSub" style={{ marginTop: 8 }}>
-                Issu de Kinshasa (RDC), j&apos;ai choisi de mettre mon énergie et mon expérience au service d&apos;une cause qui me tient à cœur : aider la jeunesse à devenir un moteur du changement.
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 14px", borderRadius: 999, background: "rgba(76, 201, 240, 0.1)", marginBottom: 16 }}>
+                <span style={{ fontSize: 16 }}>🌟</span>
+                <span style={{ fontSize: 12, fontWeight: 600, color: "var(--primary)", letterSpacing: "0.5px" }}>MON PARCOURS</span>
+              </div>
+              <h2 className="sectionTitle" style={{ marginBottom: 20 }}>À propos</h2>
+              <p className="sectionSub" style={{ marginBottom: 20, lineHeight: 1.7 }}>
+                Issu de Kinshasa (RDC), j&apos;ai choisi de mettre mon énergie et mon expérience au service d&apos;une cause qui me tient à cœur : <strong style={{ color: "var(--primary)", fontWeight: 600 }}>aider la jeunesse à devenir un moteur du changement</strong>.
               </p>
+              <div style={{ display: "flex", gap: 24, marginTop: 24 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                  <div style={{ width: 4, height: 40, background: "linear-gradient(180deg, var(--primary), var(--accent))", borderRadius: 4 }} />
+                  <div>
+                    <div style={{ fontSize: 24, fontWeight: 700, color: "var(--primary)" }}>10+</div>
+                    <div style={{ fontSize: 12, color: "var(--muted)" }}>Années d&apos;expérience</div>
+                  </div>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                  <div style={{ width: 4, height: 40, background: "linear-gradient(180deg, var(--accent), var(--primary))", borderRadius: 4 }} />
+                  <div>
+                    <div style={{ fontSize: 24, fontWeight: 700, color: "var(--primary)" }}>1000+</div>
+                    <div style={{ fontSize: 12, color: "var(--muted)" }}>Jeunes formés</div>
+                  </div>
+                </div>
+              </div>
             </div>
             </Reveal>
             <Reveal delay={120}>
             <div className="aboutCard">
-              <div className="glass card" style={{ padding: 20, borderRadius: 16 }}>
-                <p style={{ color: "var(--muted)" }}>
-                  À travers mes projets entrepreneuriaux, mes actions sociales et mon engagement citoyen, je porte une voix : celle d&apos;une jeunesse debout, qui croit en elle-même, qui agit, qui innove et qui construit un Congo meilleur.
-                </p>
+              <div className="glass card aboutMissionCard" style={{ padding: 28, borderRadius: 18, position: "relative", overflow: "hidden" }}>
+                <div style={{ position: "absolute", top: 0, right: 0, width: 120, height: 120, background: "radial-gradient(circle, rgba(76, 201, 240, 0.15), transparent 70%)", filter: "blur(40px)" }} />
+                <div style={{ position: "relative", zIndex: 1 }}>
+                  <div style={{ fontSize: 32, marginBottom: 16 }}>💡</div>
+                  <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12, background: "linear-gradient(135deg, var(--foreground), var(--primary))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                    Ma Mission
+                  </h3>
+                  <p style={{ color: "var(--muted)", lineHeight: 1.7, fontSize: 15 }}>
+                    À travers mes projets entrepreneuriaux, mes actions sociales et mon engagement citoyen, je porte une voix : celle d&apos;une <strong style={{ color: "var(--foreground)" }}>jeunesse debout</strong>, qui croit en elle-même, qui agit, qui innove et qui construit un <strong style={{ color: "var(--foreground)" }}>Congo meilleur</strong>.
+                  </p>
+                </div>
               </div>
             </div>
             </Reveal>
@@ -208,10 +239,10 @@ export default function Home() {
             ].map((card, i) => (
               <Reveal key={card.title} delay={i * 80}>
                 <div className="roleCard">
-                  <div className="glass card" style={{ padding: 24, borderRadius: 18, height: "100%" }}>
-                    <div style={{ fontSize: 32, marginBottom: 12 }}>{card.icon}</div>
-                    <h3 style={{ fontSize: 19, marginBottom: 12, fontWeight: 600, lineHeight: 1.3 }}>{card.title}</h3>
-                    <p style={{ color: "var(--muted)", fontSize: 15, lineHeight: 1.6 }}>{card.desc}</p>
+                  <div className="glass card" style={{ padding: 20, borderRadius: 16, height: "100%" }}>
+                    <div style={{ fontSize: 28, marginBottom: 10 }}>{card.icon}</div>
+                    <h3 style={{ fontSize: 17, marginBottom: 10, fontWeight: 600, lineHeight: 1.3 }}>{card.title}</h3>
+                    <p style={{ color: "var(--muted)", fontSize: 14, lineHeight: 1.5 }}>{card.desc}</p>
                   </div>
                 </div>
               </Reveal>
@@ -223,7 +254,7 @@ export default function Home() {
       {/* Projets & Initiatives */}
       <section id="projets" style={{ padding: "clamp(40px, 6vw, 60px) 0" }}>
         <div className="container">
-          <div style={{ textAlign: "center", marginBottom: 48 }}>
+          <div style={{ textAlign: "center", marginBottom: 36 }}>
             <h2 className="sectionTitle">Projets & Initiatives</h2>
             <p className="sectionSub" style={{ marginLeft: "auto", marginRight: "auto", maxWidth: 600 }}>
               Quelques actions phares au service de la jeunesse et du développement du Congo
@@ -260,11 +291,11 @@ export default function Home() {
             </Reveal>
             <Reveal delay={140}>
             <div className="bookContent">
-              <div style={{ display: "inline-block", padding: "6px 14px", borderRadius: 999, background: "rgba(76, 201, 240, 0.1)", color: "var(--primary)", fontSize: 13, fontWeight: 600, marginBottom: 16 }}>
+              <div style={{ display: "inline-block", padding: "5px 12px", borderRadius: 999, background: "rgba(76, 201, 240, 0.1)", color: "var(--primary)", fontSize: 12, fontWeight: 600, marginBottom: 12 }}>
                 📖 Publications & Speaking
               </div>
               <h2 className="sectionTitle">Livres & Conférences</h2>
-              <p className="sectionSub" style={{ marginBottom: 24, fontSize: 17 }}>
+              <p className="sectionSub" style={{ marginBottom: 20 }}>
                 Interventions inspirantes et publications pour éveiller, former et orienter la jeunesse congolaise vers l&apos;excellence et le leadership.
               </p>
               <div className="actions">
@@ -280,11 +311,11 @@ export default function Home() {
       {/* Contact */}
       <section id="contact" style={{ padding: "clamp(40px, 6vw, 60px) 0 clamp(60px, 8vw, 100px)" }}>
         <div className="container">
-          <div className="glass contactCard" style={{ borderRadius: 24, padding: "clamp(32px, 5vw, 48px)", background: "linear-gradient(135deg, rgba(76, 201, 240, 0.08), rgba(247, 37, 133, 0.06))" }}>
+          <div className="glass contactCard" style={{ borderRadius: 20, padding: "clamp(28px, 4vw, 40px)", background: "linear-gradient(135deg, rgba(76, 201, 240, 0.08), rgba(247, 37, 133, 0.06))" }}>
             <div className="grid contactGrid" style={{ alignItems: "center" }}>
               <div>
-                <h2 className="sectionTitle" style={{ marginBottom: 12 }}>Travaillons ensemble</h2>
-                <p className="sectionSub" style={{ marginBottom: 0, fontSize: 18 }}>
+                <h2 className="sectionTitle" style={{ marginBottom: 10 }}>Travaillons ensemble</h2>
+                <p className="sectionSub" style={{ marginBottom: 0 }}>
                   Vous avez un projet, une initiative sociale ou un événement ? Contactez-moi.
                 </p>
               </div>
