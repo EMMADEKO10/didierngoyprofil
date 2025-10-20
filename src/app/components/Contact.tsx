@@ -28,13 +28,25 @@ export default function Contact() {
                 Vous avez un projet, une initiative sociale ou un événement ? Contactez-moi.
               </p>
             </div>
-            <div className="actions" style={{ justifyContent: "flex-end" }}>
-              <a href="mailto:contact@didierngoy.com" className="btn btnPrimary" style={{ gap: 8 }}>
-                <span>✉</span> Envoyer un email
+            <div className="actions" style={{ justifyContent: "flex-end", display: "flex", flexDirection: "column", gap: 12 }}>
+              <a href="mailto:didierngoyprim@gmail.com" className="btn btnPrimary" style={{ gap: 8, width: "100%" }}>
+                <span>✉</span> didierngoyprim@gmail.com
               </a>
-              <a href="https://wa.me/243821355601" target="_blank" rel="noreferrer" className="btn" style={{ gap: 8 }}>
-                <span>💬</span> WhatsApp
+              <a href="mailto:didier8214690@gmail.com" className="btn" style={{ gap: 8, width: "100%" }}>
+                <span>📧</span> didier8214690@gmail.com
               </a>
+              {/* Social links */}
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 10, marginTop: 8 }}>
+                <a href="https://www.linkedin.com/in/didier-ngoy-ngu-officiel-48a1b715a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noreferrer" className="btn" style={{ gap: 8 }}>
+                  <span>in</span> LinkedIn
+                </a>
+                <a href="https://www.instagram.com/didier_ngoyi_ngubu?igsh=MTlpeGV2eWpwMHVqcw==" target="_blank" rel="noreferrer" className="btn" style={{ gap: 8 }}>
+                  <span>📷</span> Instagram
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100064138083508&mibextid=rS40aB7S9Ucbxw6v" target="_blank" rel="noreferrer" className="btn" style={{ gap: 8 }}>
+                  <span>f</span> Facebook
+                </a>
+              </div>
             </div>
           </div>
         </div>
