@@ -66,7 +66,7 @@ export default function Home() {
       <About />
       <Presentation />
 
-      <Roles />
+      {/* <Roles /> */}
 
       <Projects images={projectImagesOrdered} />
 
