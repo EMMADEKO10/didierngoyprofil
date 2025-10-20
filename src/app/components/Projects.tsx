@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Reveal from "../Reveal";
 import { useEffect, useRef, useState } from "react";
+import Lightbox from "../Lightbox";
 
 interface ProjectsProps {
   images: string[];
@@ -11,6 +12,7 @@ interface ProjectsProps {
 export default function Projects({ images }: ProjectsProps) {
   const [projectsStart, setProjectsStart] = useState(0);
   const projectsHoverRef = useRef(false);
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
 
   useEffect(() => {
     if (images.length <= 6) return; // rotate only if many images
@@ -36,7 +38,7 @@ export default function Projects({ images }: ProjectsProps) {
             return (
               <Reveal key={`${src}-${idx}`} delay={(idx % 6) * 60}>
                 <div className="projectCard">
-                  <div style={{ position: "relative", aspectRatio: "4/3" }} className="glass card">
+                  <div style={{ position: "relative", aspectRatio: "4/3", cursor: "zoom-in" }} className="glass card" onClick={() => setLightboxSrc(src)}>
                     <div style={{ position: "absolute", inset: 0, borderRadius: 18, overflow: "hidden" }}>
                       <Image src={src} alt={`Projet ${idx + 1}`} fill style={{ objectFit: "cover", transition: "transform 6s ease" }} />
                     </div>
@@ -47,6 +49,7 @@ export default function Projects({ images }: ProjectsProps) {
           })}
         </div>
       </div>
+      {lightboxSrc && <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />}
     </section>
   );
 }

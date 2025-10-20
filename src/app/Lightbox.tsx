@@ -14,8 +14,15 @@ export default function Lightbox({ src, onClose }: { src: string; onClose: () =>
 
   return (
     <div className="backdrop" onClick={onClose}>
-      <div className="lightboxInner glass" onClick={(e) => e.stopPropagation()}>
-        <button className="btn iconBtn" onClick={onClose} aria-label="Fermer">✕</button>
+      <div className="lightboxInner glass" onClick={(e) => e.stopPropagation()} style={{ position: "relative" }}>
+        <button
+          className="btn iconBtn"
+          onClick={onClose}
+          aria-label="Fermer"
+          style={{ position: "absolute", top: 8, right: 8, zIndex: 2 }}
+        >
+          ✕
+        </button>
         <div style={{ position: "absolute", inset: 0, borderRadius: 16, overflow: "hidden" }}>
           <Image src={src} alt="Aperçu" fill style={{ objectFit: "contain" }} />
         </div>
