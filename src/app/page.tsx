@@ -4,7 +4,7 @@ import Hero from "./components/Hero";
 import Gallery from "./components/Gallery";
 import Presentation from "./components/Presentation";
 import About from "./components/About";
-import Roles from "./components/Roles";
+// import Roles from "./components/Roles";
 import Projects from "./components/Projects";
 import Publications from "./components/Publications";
 import Contact from "./components/Contact";

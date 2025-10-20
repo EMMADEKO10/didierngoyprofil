@@ -4,12 +4,12 @@ import Reveal from "../Reveal";
 
 export default function Presentation() {
   return (
-    <section id="presentation" style={{ padding: "clamp(50px, 7vw, 80px) 0", position: "relative", overflow: "hidden", background: "linear-gradient(180deg, rgba(76, 201, 240, 0.02), transparent)" }}>
+    <section id="presentation" style={{ padding: "clamp(30px, 4vw, 40px) 0", position: "relative", overflow: "hidden", background: "linear-gradient(180deg, rgba(76, 201, 240, 0.02), transparent)" }}>
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 20% 30%, rgba(76, 201, 240, 0.05), transparent 50%)", pointerEvents: "none" }} />
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 80% 70%, rgba(247, 37, 133, 0.04), transparent 50%)", pointerEvents: "none" }} />
       
       <div className="container" style={{ position: "relative", zIndex: 2 }}>
-        <div style={{ textAlign: "center", marginBottom: 50 }}>
+        <div style={{ textAlign: "center", marginBottom: "clamp(24px, 4vw, 32px)" }}>
           <Reveal>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "8px 20px", borderRadius: 999, background: "linear-gradient(135deg, rgba(76, 201, 240, 0.15), rgba(247, 37, 133, 0.1))", marginBottom: 16 }}>
               <span style={{ fontSize: 18 }}>✨</span>
@@ -26,7 +26,7 @@ export default function Presentation() {
 
         {/* Parcours Professionnel Timeline - Version compacte */}
         <Reveal delay={150}>
-          <div className="glass card" style={{ padding: "clamp(20px, 3vw, 28px)", borderRadius: 20, marginBottom: 40, background: "linear-gradient(135deg, rgba(76, 201, 240, 0.03), rgba(247, 37, 133, 0.02))" }}>
+          <div className="glass card" style={{ padding: "clamp(20px, 3vw, 28px)", borderRadius: 20, marginBottom: "clamp(24px, 4vw, 32px)", background: "linear-gradient(135deg, rgba(76, 201, 240, 0.03), rgba(247, 37, 133, 0.02))" }}>
             <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 24, display: "flex", alignItems: "center", gap: 10 }}>
               <span style={{ fontSize: 22 }}>📈</span>
               Parcours Professionnel
@@ -57,7 +57,7 @@ export default function Presentation() {
         </Reveal>
 
         {/* Compétences & Expertises */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 28, marginBottom: 50 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 28 }}>
           {[
             { 
               title: "Leadership Transformationnel", 
@@ -79,7 +79,7 @@ export default function Presentation() {
             },
             { 
               title: "Activisme & Philanthropie", 
-              icon: "💝",
+              icon: "",
               skills: ["Défense des droits", "Actions sociales", "Éthique du travail", "Impact communautaire"],
               gradient: "156, 39, 176"
             },

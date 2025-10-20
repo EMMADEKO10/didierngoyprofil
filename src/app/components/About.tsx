@@ -4,10 +4,10 @@ import Reveal from "../Reveal";
 
 export default function About() {
   return (
-    <section id="about" style={{ padding: "clamp(40px, 6vw, 60px) 0", position: "relative", overflow: "hidden" }}>
+    <section id="about" style={{ padding: "clamp(30px, 4vw, 40px) 0", position: "relative", overflow: "hidden" }}>
       <div className="container" style={{ position: "relative", zIndex: 2 }}>
         <Reveal>
-          <div style={{ textAlign: "center", marginBottom: "clamp(40px, 6vw, 60px)" }}>
+          <div style={{ textAlign: "center", marginBottom: "clamp(24px, 4vw, 32px)" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 16px", borderRadius: 999, background: "linear-gradient(135deg, rgba(76, 201, 240, 0.15), rgba(247, 37, 133, 0.1))", marginBottom: 20 }}>
               <span style={{ fontSize: 18 }}>🌟</span>
               <span style={{ fontSize: 13, fontWeight: 600, color: "var(--primary)", letterSpacing: "0.5px" }}>À PROPOS DE DIDIER</span>
@@ -19,7 +19,7 @@ export default function About() {
           </div>
 
           {/* Contenu principal - Design moderne et responsive */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "clamp(24px, 4vw, 40px)", marginBottom: 40 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "clamp(24px, 4vw, 40px)" }}>
             {/* Vision */}
             <div className="glass card" style={{ padding: "clamp(24px, 4vw, 32px)", borderRadius: 20, background: "linear-gradient(135deg, rgba(76, 201, 240, 0.06), rgba(76, 201, 240, 0.02))", position: "relative", overflow: "hidden" }}>
               <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(90deg, var(--primary), var(--accent))" }} />
