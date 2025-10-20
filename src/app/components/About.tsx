@@ -23,16 +23,17 @@ export default function About() {
             {/* Vision */}
             <div className="glass card" style={{ padding: "clamp(24px, 4vw, 32px)", borderRadius: 20, background: "linear-gradient(135deg, rgba(76, 201, 240, 0.06), rgba(76, 201, 240, 0.02))", position: "relative", overflow: "hidden" }}>
               <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: "linear-gradient(90deg, var(--primary), var(--accent))" }} />
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+              {/* <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
                 <div style={{ fontSize: "clamp(24px, 3vw, 28px)" }}>🎯</div>
                 <h3 style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700, color: "var(--foreground)" }}>Ma Vision</h3>
-              </div>
-              <p style={{ fontSize: "clamp(14px, 1.8vw, 16px)", lineHeight: 1.6, color: "var(--muted)", marginBottom: 16 }}>
-                Bâtir une Afrique unie, entreprenante et consciente de son potentiel. Former une génération de leaders africains audacieux, disciplinés et unis par le désir d&apos;impacter positivement le monde.
-              </p>
+              </div> */}
               <p style={{ fontSize: "clamp(13px, 1.6vw, 15px)", lineHeight: 1.5, color: "var(--muted)" }}>
                 Né en République Démocratique du Congo dans une famille modeste de quatorze enfants, j&apos;ai très tôt manifesté un esprit d&apos;initiative exceptionnel. Dès l&apos;école secondaire, j&apos;ai lancé ma première entreprise : une petite cabine de téléphonie mobile.
               </p>
+              <p style={{ fontSize: "clamp(14px, 1.8vw, 16px)", lineHeight: 1.6, color: "var(--muted)", marginBottom: 16 }}>
+                Ma mission est de Bâtir une Afrique unie, entreprenante et consciente de son potentiel. Former une génération de leaders africains audacieux, disciplinés et unis par le désir d&apos;impacter positivement le monde.
+              </p>
+              
             </div>
 
             {/* Valeurs */}
