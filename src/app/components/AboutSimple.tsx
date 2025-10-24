@@ -1,0 +1,108 @@
+"use client";
+
+import Image from "next/image";
+
+export default function About() {
+  return (
+    <section id="about" style={{ padding: "4rem 0" }}>
+      <div className="container">
+        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+          <div className="heroBadge" style={{ display: "inline-block", marginBottom: "1rem" }}>
+            À PROPOS DE DIDIER
+          </div>
+          <h2 className="sectionTitle">Didier Ngoyi Ngubu</h2>
+        </div>
+
+        {/* Layout responsive avec photo et contenu */}
+        <div className="heroGrid" style={{ alignItems: "start" }}>
+          
+          {/* Contenu texte */}
+          <div style={{ 
+            fontSize: "1rem", 
+            lineHeight: 1.6,
+            color: "var(--muted)"
+          }}>
+            <p style={{ marginBottom: "1rem" }}>
+              Didier <strong>Ngoyi Ngubu</strong> est un <strong>citoyen engagé</strong>, <strong>auteur</strong>, <strong>entrepreneur social</strong> et <strong>conférencier international</strong>, représentant une nouvelle génération de leaders africains portés par la vision d&apos;une <strong>Afrique unie, entreprenante et consciente de son potentiel</strong>.
+            </p>
+
+            <h3 style={{ fontSize: "1.25rem", fontWeight: 600, color: "var(--foreground)", marginBottom: "0.5rem", marginTop: "1.5rem" }}>🌍 Parcours et Origines</h3>
+            <p style={{ marginBottom: "0.5rem" }}>
+              Né en <strong>République Démocratique du Congo</strong> dans une famille modeste de quatorze enfants, Didier Ngoyi Ngubu a très tôt manifesté un <strong>esprit d&apos;initiative</strong> remarquable.<br/>
+              Dès l&apos;école secondaire, il lance sa <strong>première entreprise</strong>, une petite cabine de téléphonie mobile.
+            </p>
+            <p style={{ marginBottom: "1rem" }}>
+              Pendant ses études universitaires, il s&apos;engage dans <strong>l&apos;activisme social</strong> à travers <em>Birth Women Organisation</em> — une ONG basée à Londres œuvrant pour la défense des droits des femmes — où il gravit les échelons jusqu&apos;à devenir <strong>coordonnateur général à Kinshasa</strong>.
+            </p>
+
+            <p style={{ marginBottom: "0.5rem" }}>
+              Convaincu que le <strong>développement de l&apos;Afrique</strong> passe par la <strong>formation</strong> et <strong>l&apos;autonomisation</strong>, il fonde <strong>New Vision Service</strong>, une entreprise dédiée à la formation professionnelle et à l&apos;accompagnement des femmes dans divers métiers :<br/>
+              - Administration, Hôtellerie, Couture, Santé domestique
+            </p>
+            <p style={{ marginBottom: "0.5rem" }}>
+              Plus tard, il cofonde <strong>Panthère Security</strong>, une société de gardiennage et de protection, qu&apos;il revend avec succès.
+            </p>
+            <p style={{ marginBottom: 0 }}>
+              En <strong>2019</strong>, il crée <strong>Bioteck Africa Groupe</strong>, une structure multisectorielle active dans :<br/>
+              - L&apos;agriculture, La transformation agroalimentaire, L&apos;immobilier, Le transport, La restauration<br/><br/>
+              Cette entreprise témoigne de sa <strong>foi en un développement africain intégré et durable</strong>.
+            </p>
+          </div>
+
+          {/* Photo de Didier */}
+          <div style={{ 
+            position: "relative", 
+            width: "100%",
+            maxWidth: "400px",
+            height: "500px",
+            borderRadius: "12px",
+            overflow: "hidden",
+            boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+            background: "var(--card)",
+            border: "1px solid var(--border)"
+          }}>
+            <Image 
+              src="/hirosection/WhatsApp Image 2025-10-18 à 10.21.22_6ff399ae.jpg"
+              alt="Didier Ngoyi Ngubu - Entrepreneur, Conférencier et Leader Africain"
+              fill
+              style={{
+                objectFit: "cover",
+                objectPosition: "center"
+              }}
+              priority={false}
+              sizes="(max-width: 768px) 100vw, 400px"
+            />
+            
+            {/* Badge simple */}
+            <div style={{
+              position: "absolute",
+              bottom: "1rem",
+              left: "1rem",
+              right: "1rem",
+              background: "var(--card)",
+              border: "1px solid var(--border)",
+              borderRadius: "8px",
+              padding: "0.75rem",
+              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)"
+            }}>
+              <div style={{ 
+                fontSize: "0.875rem", 
+                fontWeight: 600, 
+                color: "var(--primary)",
+                marginBottom: "0.25rem"
+              }}>
+                🌟 Visionnaire Africain
+              </div>
+              <div style={{ 
+                fontSize: "0.75rem", 
+                color: "var(--muted)"
+              }}>
+                Entrepreneur • Conférencier • Leader
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

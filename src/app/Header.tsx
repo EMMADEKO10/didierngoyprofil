@@ -15,52 +15,59 @@ export default function Header() {
   }, []);
 
   return (
-    <header
-      className="glass"
-      style={{
-        position: "fixed",
-        top: 10,
-        left: 0,
-        right: 0,
-        zIndex: 80,
-        borderRadius: 16,
-        margin: "10px auto 0",
-        width: "min(1100px, 92%)",
-        transition: "box-shadow .2s ease, transform .2s ease",
-        boxShadow: scrolled ? "var(--glow)" : "none",
-        transform: scrolled ? "translateY(0)" : "translateY(0)",
-      }}
-    >
-      <nav
-        style={{
+    <header style={{
+      position: "fixed",
+      top: 0,
+      left: 0,
+      right: 0,
+      zIndex: 100,
+      background: "var(--background)",
+      borderBottom: "1px solid var(--border)",
+      padding: "1rem 0"
+    }}>
+      <div className="container">
+        <nav style={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
-          padding: "10px 14px",
-        }}
-      >
-        <Link href="#top" className="headerLogo" style={{ fontWeight: 700, letterSpacing: -0.2, whiteSpace: "nowrap" }}>
-          <span className="logoFull">Didier Ngoyi</span>
-          <span className="logoShort">D. Ngoyi</span>
-        </Link>
-        <div className="headerNav">
+          justifyContent: "space-between"
+        }}>
+          <Link href="#top" className="headerLogo">
+            Didier Ngoyi Ngubu
+          </Link>
           <div className="navLinks">
-            <a href="#about" className="btn navBtn">À propos</a>
-            <a href="#projets" className="btn navBtn">Projets</a>
-            <a href="#livres" className="btn navBtn">Livres</a>
-            <a href="#galerie" className="btn navBtn">Galerie</a>
-            <a href="#contact" className="btn btnPrimary navBtn">Contact</a>
+            <a href="#about" className="navBtn">À propos</a>
+            <a href="#projets" className="navBtn">Projets</a>
+            <a href="#livres" className="navBtn">Livres</a>
+            <a href="#galerie" className="navBtn">Galerie</a>
+            <a href="#contact" className="btnPrimary navBtn">Contact</a>
           </div>
           <button 
             className="mobileMenuBtn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menu"
+            style={{
+              display: "none",
+              background: "none",
+              border: "none",
+              fontSize: "1.5rem",
+              cursor: "pointer",
+              color: "var(--foreground)"
+            }}
           >
             ☰
           </button>
-        </div>
+        </nav>
         {mobileMenuOpen && (
-          <div className="navLinksMobile">
+          <div className="navLinksMobile" style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.5rem",
+            marginTop: "1rem",
+            padding: "1rem",
+            background: "var(--card)",
+            border: "1px solid var(--border)",
+            borderRadius: "8px"
+          }}>
             <a href="#about" className="btn" onClick={() => setMobileMenuOpen(false)}>À propos</a>
             <a href="#projets" className="btn" onClick={() => setMobileMenuOpen(false)}>Projets</a>
             <a href="#livres" className="btn" onClick={() => setMobileMenuOpen(false)}>Livres</a>
@@ -68,9 +75,7 @@ export default function Header() {
             <a href="#contact" className="btn btnPrimary" onClick={() => setMobileMenuOpen(false)}>Contact</a>
           </div>
         )}
-      </nav>
+      </div>
     </header>
   );
 }
-
-

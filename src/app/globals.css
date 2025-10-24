@@ -43,9 +43,7 @@ html {
 
 body {
   color: var(--foreground);
-  background: radial-gradient(1200px 600px at 70% -10%, rgba(76, 201, 240, 0.06), transparent 60%),
-    radial-gradient(900px 500px at -10% 40%, rgba(247, 37, 133, 0.05), transparent 60%),
-    linear-gradient(180deg, #05070a 0%, #0a0f17 100%);
+  background: var(--background);
   font-family: var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -54,9 +52,7 @@ body {
 }
 
 html[data-theme="light"] body {
-  background: radial-gradient(1200px 600px at 70% -10%, rgba(58, 134, 255, 0.06), transparent 60%),
-    radial-gradient(900px 500px at -10% 40%, rgba(255, 0, 110, 0.05), transparent 60%),
-    linear-gradient(180deg, #eaf3ff 0%, #f7fbff 100%);
+  background: var(--background);
 }
 
 * {
@@ -83,10 +79,7 @@ a {
   letter-spacing: -0.02em;
   margin-bottom: 16px;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--foreground) 0%, var(--primary) 80%, var(--accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--foreground);
 }
 
 .heroSubtitle {
@@ -97,27 +90,20 @@ a {
 }
 
 .glass {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  background: var(--card);
   border: 1px solid var(--border);
-  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 html[data-theme="light"] .glass {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.35));
+  background: var(--card);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .heroBadge {
-  box-shadow: 0 0 20px rgba(76, 201, 240, 0.2);
-  animation: badgePulse 3s ease-in-out infinite;
-}
-
-@keyframes badgePulse {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(76, 201, 240, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(76, 201, 240, 0.4);
-  }
+  background: var(--card);
+  border: 1px solid var(--border);
 }
 
 .btn {

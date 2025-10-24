@@ -3,7 +3,7 @@
 import Hero from "./components/Hero";
 import Gallery from "./components/Gallery";
 // import Presentation from "./components/Presentation";
-import About from "./components/About";
+import About from "./components/AboutSimple";
 // import Profile from "./components/Profile";
 import Engagement from "./components/Engagement";
 import Agriculture from "./components/Agriculture";
