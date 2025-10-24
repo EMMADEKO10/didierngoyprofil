@@ -46,7 +46,7 @@ export default function About() {
               <span style={{ fontSize: 18 }}></span>
               <span style={{ fontSize: 13, fontWeight: 600, color: "var(--primary)", letterSpacing: "0.5px" }}>À PROPOS DE DIDIER</span>
             </div>
-            <h2 className="sectionTitle" style={{ marginBottom: 20 }}>Didier Ngoy Ngubu</h2>
+            <h2 className="sectionTitle" style={{ marginBottom: 20 }}>Didier Ngoyi Ngubu</h2>
           </div>
 
           {/* Layout responsive avec photo et contenu */}
@@ -67,12 +67,12 @@ export default function About() {
               minWidth: 0
             }}>
               <p style={{ marginBottom: 8 }}>
-                Didier <strong>Ngoy Ngubu</strong> est un <strong>citoyen engagé</strong>, <strong>auteur</strong>, <strong>entrepreneur social</strong> et <strong>conférencier international</strong>, représentant une nouvelle génération de leaders africains portés par la vision d&apos;une <strong>Afrique unie, entreprenante et consciente de son potentiel</strong>.
+                Didier <strong>Ngoyi Ngubu</strong> est un <strong>citoyen engagé</strong>, <strong>auteur</strong>, <strong>entrepreneur social</strong> et <strong>conférencier international</strong>, représentant une nouvelle génération de leaders africains portés par la vision d&apos;une <strong>Afrique unie, entreprenante et consciente de son potentiel</strong>.
               </p>
 
               <h3 style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700, color: "var(--foreground)", marginBottom: 8, marginTop: 16 }}>🌍 Parcours et Origines</h3>
               <p style={{ marginBottom: 8 }}>
-                Né en <strong>République Démocratique du Congo</strong> dans une famille modeste de quatorze enfants, Didier Ngoy Ngubu a très tôt manifesté un <strong>esprit d&apos;initiative</strong> remarquable.<br/>
+                Né en <strong>République Démocratique du Congo</strong> dans une famille modeste de quatorze enfants, Didier Ngoyi Ngubu a très tôt manifesté un <strong>esprit d&apos;initiative</strong> remarquable.<br/>
                 Dès l&apos;école secondaire, il lance sa <strong>première entreprise</strong>, une petite cabine de téléphonie mobile.
               </p>
               <p style={{ marginBottom: 16 }}>
@@ -121,7 +121,7 @@ export default function About() {
               {/* Image */}
               <Image 
                 src="/hirosection/WhatsApp Image 2025-10-18 à 10.21.22_6ff399ae.jpg" 
-                alt="Didier Ngoy Ngubu - Entrepreneur, Conférencier et Leader Africain"
+                alt="Didier Ngoyi Ngubu - Entrepreneur, Conférencier et Leader Africain"
                 fill
                 style={{
                   objectFit: "cover",
@@ -194,7 +194,7 @@ export default function About() {
               
               <Image 
                 src="/hirosection/WhatsApp Image 2025-10-18 à 10.21.22_6ff399ae.jpg" 
-                alt="Didier Ngoy Ngubu - Entrepreneur, Conférencier et Leader Africain"
+                alt="Didier Ngoyi Ngubu - Entrepreneur, Conférencier et Leader Africain"
                 fill
                 style={{
                   objectFit: "cover",

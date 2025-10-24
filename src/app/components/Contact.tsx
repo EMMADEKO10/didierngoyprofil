@@ -41,7 +41,7 @@ export default function Contact() {
           </div>
         </div>
         <footer style={{ marginTop: 40, color: "var(--muted)", fontSize: 14, textAlign: "center", opacity: 0.7 }}>
-          © {new Date().getFullYear()} Didier Ngoy Ngubu. Tous droits réservés.
+           © {new Date().getFullYear()} Didier Ngoyi Ngubu. Tous droits réservés.
         </footer>
       </div>
     </section>

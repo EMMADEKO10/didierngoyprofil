@@ -48,7 +48,7 @@ export default function Agriculture() {
               </div>
               <h2 className="sectionTitle" style={{ marginBottom: 20 }}>L&apos;Agriculteur et Homme de Terrain</h2>
               <p className="sectionSub" style={{ maxWidth: 800, margin: "0 auto", fontSize: "clamp(15px, 2vw, 17px)", lineHeight: 1.7 }}>
-                Découvrez l&apos;engagement de Didier Ngoy Ngubu pour l&apos;agriculture africaine et les structures qu&apos;il dirige.
+                 Découvrez l&apos;engagement de Didier Ngoyi Ngubu pour l&apos;agriculture africaine et les structures qu&apos;il dirige.
               </p>
             </div>
 
@@ -71,7 +71,7 @@ export default function Agriculture() {
               }}>
                 <h3 style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700, color: "var(--foreground)", marginBottom: 8, marginTop: 16 }}>🌱 L&apos;Agriculteur et Homme de Terrain</h3>
                 <p style={{ marginBottom: 8 }}>
-                  Entrepreneur social passionné par l&apos;<strong>agriculture</strong> et la <strong>souveraineté alimentaire</strong>, Didier Ngoy Ngubu est le fondateur de <strong>Bioteck Africa Group</strong>.<br/>
+                   Entrepreneur social passionné par l&apos;<strong>agriculture</strong> et la <strong>souveraineté alimentaire</strong>, Didier Ngoyi Ngubu est le fondateur de <strong>Bioteck Africa Group</strong>.<br/>
                   Cette entreprise promeut la <strong>production locale</strong>, la <strong>transformation agroalimentaire</strong> et la <strong>valorisation des produits africains</strong>.
                 </p>
                 <p style={{ marginBottom: 8 }}>
@@ -88,7 +88,7 @@ export default function Agriculture() {
                 
                 <h4 style={{ fontSize: "clamp(16px, 2vw, 18px)", fontWeight: 600, color: "var(--primary)", marginBottom: 8, marginTop: 16 }}>1. Congo Leadership</h4>
                 <p style={{ marginBottom: 8 }}>
-                  <strong>Congo Leadership</strong> est une organisation non gouvernementale fondée par Didier Ngoy Ngubu, avec pour mission de <strong>réveiller le potentiel de la jeunesse congolaise et africaine</strong>.<br/>
+                   <strong>Congo Leadership</strong> est une organisation non gouvernementale fondée par Didier Ngoyi Ngubu, avec pour mission de <strong>réveiller le potentiel de la jeunesse congolaise et africaine</strong>.<br/>
                   L&apos;organisation forme et encadre hommes et femmes à travers :<br/>
                   - Des <strong>formations pratiques</strong><br/>
                   - Des <strong>ateliers de leadership et d&apos;entrepreneuriat</strong><br/>
@@ -139,7 +139,7 @@ export default function Agriculture() {
                 {/* Image */}
                 <Image 
                   src="/projet/fermier/didier-ngoy-moto.jpg" 
-                  alt="Didier Ngoy Ngubu - Agriculteur et Leader des Structures"
+                   alt="Didier Ngoyi Ngubu - Agriculteur et Leader des Structures"
                   fill
                   style={{
                     objectFit: "cover",
@@ -212,7 +212,7 @@ export default function Agriculture() {
                 
                 <Image 
                   src="/projet/agriculteur/WhatsApp Image 2025-10-13 à 17.25.33_9efeb24d.jpg" 
-                  alt="Didier Ngoy Ngubu - Agriculteur et Leader des Structures"
+                   alt="Didier Ngoyi Ngubu - Agriculteur et Leader des Structures"
                   fill
                   style={{
                     objectFit: "cover",

@@ -41,7 +41,7 @@ export default function Hero({ images }: HeroProps) {
                   letterSpacing: "0.3px",
                 }}
               >
-                ✦ Didier Ngoy Ngubu
+                ✦ Didier Ngoyi Ngubu
               </div>
               <h1 className="heroTitle">
                 Entrepreneur, Leader de la jeunesse, Citoyen engagé
