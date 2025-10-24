@@ -54,10 +54,10 @@ export default function Hero({ images }: HeroProps) {
               </p>
               <div className="actions" style={{ marginTop: 24 }}>
                 <Link href="#contact" className="btn btnPrimary">
-                  Me contacter
+                  Le contacter
                 </Link>
-                <Link href="#projets" className="btn">
-                  Découvrir mes actions
+                <Link href="#about" className="btn">
+                  Le connaître
                 </Link>
               </div>
             </div>

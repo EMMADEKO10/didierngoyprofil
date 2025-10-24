@@ -2,8 +2,11 @@
 
 import Hero from "./components/Hero";
 import Gallery from "./components/Gallery";
-import Presentation from "./components/Presentation";
+// import Presentation from "./components/Presentation";
 import About from "./components/About";
+// import Profile from "./components/Profile";
+import Engagement from "./components/Engagement";
+import Agriculture from "./components/Agriculture";
 // import Roles from "./components/Roles";
 import Projects from "./components/Projects";
 import Publications from "./components/Publications";
@@ -14,7 +17,7 @@ const heroImages = [
   "/hirosection/WhatsApp Image 2025-10-18 à 11.29.35_ede24d21.jpg",
   // "/hirosection/558692288_1222148709933054_4229808147326803317_n.jpg",
   "/hirosection/557978692_1222147466599845_6621739788798749420_n.jpg",
-  "/hirosection/WhatsApp Image 2025-10-18 à 10.21.22_6ff399ae.jpg"
+  // "/hirosection/WhatsApp Image 2025-10-18 à 10.21.22_6ff399ae.jpg"
 ];
 
 const projectImages = [
@@ -65,7 +68,10 @@ export default function Home() {
     <main>
       <Hero images={heroImages} />
       <About />
-      <Presentation />
+      <Engagement />
+      <Agriculture />
+      {/* <Profile /> */}
+      {/* <Presentation /> */}
 
       {/* <Roles /> */}
 

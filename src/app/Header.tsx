@@ -45,9 +45,7 @@ export default function Header() {
         </Link>
         <div className="headerNav">
           <div className="navLinks">
-            <a href="#presentation" className="btn navBtn">Présentation</a>
             <a href="#about" className="btn navBtn">À propos</a>
-            <a href="#roles" className="btn navBtn">Rôles</a>
             <a href="#projets" className="btn navBtn">Projets</a>
             <a href="#livres" className="btn navBtn">Livres</a>
             <a href="#galerie" className="btn navBtn">Galerie</a>
@@ -63,9 +61,7 @@ export default function Header() {
         </div>
         {mobileMenuOpen && (
           <div className="navLinksMobile">
-            <a href="#presentation" className="btn" onClick={() => setMobileMenuOpen(false)}>Présentation</a>
             <a href="#about" className="btn" onClick={() => setMobileMenuOpen(false)}>À propos</a>
-            <a href="#roles" className="btn" onClick={() => setMobileMenuOpen(false)}>Rôles</a>
             <a href="#projets" className="btn" onClick={() => setMobileMenuOpen(false)}>Projets</a>
             <a href="#livres" className="btn" onClick={() => setMobileMenuOpen(false)}>Livres</a>
             <a href="#galerie" className="btn" onClick={() => setMobileMenuOpen(false)}>Galerie</a>
