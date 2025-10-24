@@ -21,30 +21,43 @@ const heroImages = [
 ];
 
 const projectImages = [
-  // 2025-10-18 new batch
-  "/projet/WhatsApp Image 2025-10-18 à 11.38.18_197f8f3e.jpg",
-  "/projet/WhatsApp Image 2025-10-18 à 11.38.16_d72dd618.jpg",
-  "/projet/WhatsApp Image 2025-10-18 à 11.38.14_a953067c.jpg",
-  "/projet/WhatsApp Image 2025-10-18 à 11.38.13_ba251aad.jpg",
-  "/projet/WhatsApp Image 2025-10-18 à 11.38.14_75d201cf.jpg",
-  "/projet/WhatsApp Image 2025-10-18 à 11.38.11_f80d7b47.jpg",
-  "/projet/WhatsApp Image 2025-10-18 à 11.38.10_f314f97c.jpg",
-  "/projet/WhatsApp Image 2025-10-18 à 11.38.04_d4d406f2.jpg",
-  "/projet/WhatsApp Image 2025-10-18 à 11.38.03_eb83234c.jpg",
-  "/projet/WhatsApp Image 2025-10-18 à 11.37.56_07215689.jpg",
-  "/projet/WhatsApp Image 2025-10-18 à 11.37.56_71b2493c.jpg",
-  "/projet/WhatsApp Image 2025-10-18 à 11.29.35_ede24d21.jpg",
-  "/projet/WhatsApp Image 2025-10-18 à 10.21.22_6ff399ae.jpg",
-  // 2025-10-13 batch
-  "/projet/WhatsApp Image 2025-10-13 à 17.25.33_9efeb24d.jpg",
-  "/projet/WhatsApp Image 2025-10-13 à 17.24.21_7b5d5f41.jpg",
-  "/projet/WhatsApp Image 2025-10-13 à 17.23.55_3b9939f0.jpg",
-  "/projet/WhatsApp Image 2025-10-13 à 17.23.32_ea9e07dd.jpg",
-  "/projet/WhatsApp Image 2025-10-13 à 17.22.42_3d152655.jpg",
-  "/projet/WhatsApp Image 2025-10-13 à 17.22.02_d9c6583c.jpg",
-  "/projet/WhatsApp Image 2025-10-13 à 17.21.45_d5e602f4.jpg",
-  "/projet/WhatsApp Image 2025-10-13 à 17.21.13_8115392f.jpg",
-  "/projet/WhatsApp Image 2025-10-13 à 17.16.48_46f69da3.jpg",
+  // Images organisées par catégories
+  // Agriculteur
+  "/projet/agriculteur/WhatsApp Image 2025-10-18 à 11.38.18_197f8f3e.jpg",
+  "/projet/agriculteur/WhatsApp Image 2025-10-13 à 17.25.33_9efeb24d.jpg",
+  "/projet/agriculteur/WhatsApp Image 2025-10-18 à 11.29.35_ede24d21.jpg",
+  "/projet/agriculteur/WhatsApp Image 2025-10-18 à 11.38.14_75d201cf.jpg",
+  "/projet/agriculteur/WhatsApp Image 2025-10-18 à 11.38.14_a953067c.jpg",
+  "/projet/agriculteur/WhatsApp Image 2025-10-18 à 11.38.04_d4d406f2.jpg",
+  "/projet/agriculteur/WhatsApp Image 2025-10-13 à 17.24.21_7b5d5f41.jpg",
+  
+  // Conférencier
+  "/projet/conferencier/WhatsApp Image 2025-10-18 à 11.38.16_d72dd618.jpg",
+  "/projet/conferencier/WhatsApp Image 2025-10-18 à 11.38.13_ba251aad.jpg",
+  "/projet/conferencier/WhatsApp Image 2025-10-18 à 11.38.10_f314f97c.jpg",
+  
+  // Entrepreneur
+  "/projet/entrepreneur/WhatsApp Image 2025-10-18 à 11.38.11_f80d7b47.jpg",
+  "/projet/entrepreneur/WhatsApp Image 2025-10-18 à 11.38.03_eb83234c.jpg",
+  "/projet/entrepreneur/WhatsApp Image 2025-10-18 à 11.37.56_07215689.jpg",
+  "/projet/entrepreneur/WhatsApp Image 2025-10-18 à 11.37.56_71b2493c.jpg",
+  
+  // Écrivain
+  "/projet/ecrivain/WhatsApp Image 2025-10-18 à 10.21.22_6ff399ae.jpg",
+  "/projet/ecrivain/WhatsApp Image 2025-10-13 à 17.23.55_3b9939f0.jpg",
+  "/projet/ecrivain/WhatsApp Image 2025-10-13 à 17.23.32_ea9e07dd.jpg",
+  
+  // Fermier
+  "/projet/fermier/WhatsApp Image 2025-10-13 à 17.22.42_3d152655.jpg",
+  "/projet/fermier/WhatsApp Image 2025-10-13 à 17.22.02_d9c6583c.jpg",
+  "/projet/fermier/WhatsApp Image 2025-10-13 à 17.21.45_d5e602f4.jpg",
+  
+  // Leader de jeune
+  "/projet/leader de jeune/WhatsApp Image 2025-10-13 à 17.21.13_8115392f.jpg",
+  "/projet/leader de jeune/WhatsApp Image 2025-10-13 à 17.16.48_46f69da3.jpg",
+  
+  // Social
+  "/projet/social/WhatsApp Image 2025-10-18 à 11.38.18_197f8f3e.jpg",
 ];
 
 const galleryImages = [
