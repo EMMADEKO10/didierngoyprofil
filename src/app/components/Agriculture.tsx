@@ -185,7 +185,7 @@ export default function Agriculture() {
                 
                 {/* Image */}
                 <Image 
-                  src="/projet/fermier/didier-ngoy-moto.jpg" 
+                  src="/projet/fermier/WhatsApp Image 2025-10-25 à 09.36.57_0f6067d4.jpg" 
                    alt={t.alt.agricultureImage}
                   fill
                   style={{
@@ -258,7 +258,7 @@ export default function Agriculture() {
                 }} />
                 
                 <Image 
-                  src="/projet/agriculteur/WhatsApp Image 2025-10-13 à 17.25.33_9efeb24d.jpg" 
+                  src="/projet/fermier/WhatsApp Image 2025-10-25 à 09.36.57_0f6067d4.jpg" 
                    alt={t.alt.agricultureImage}
                   fill
                   style={{

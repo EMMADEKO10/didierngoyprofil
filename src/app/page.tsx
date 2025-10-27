@@ -46,6 +46,8 @@ const projectImages = [
   // Fermier
   "/projet/fermier/didier-ngoy-moto.jpg",
   "/projet/fermier/WhatsApp Image 2025-10-13 à 17.16.48_46f69da3.jpg",
+  "/projet/fermier/WhatsApp Image 2025-10-25 à 09.36.57_d92e7b5d.jpg",
+  "/projet/fermier/WhatsApp Image 2025-10-25 à 09.36.58_e69be51e.jpg",
   
   // Leader de jeune
   "/projet/leader de jeune/WhatsApp Image 2025-10-13 à 17.23.55_3b9939f0.jpg",
