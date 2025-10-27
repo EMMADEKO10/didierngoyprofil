@@ -3,8 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "../Reveal";
+import { useTranslation } from "../../contexts/TranslationContext";
 
 export default function Publications() {
+  const { t } = useTranslation();
+  
   return (
     <section id="livres" style={{ padding: "clamp(40px, 6vw, 60px) 0", position: "relative", overflow: "hidden" }}>
       <div className="container" style={{ position: "relative", zIndex: 2 }}>
@@ -12,11 +15,11 @@ export default function Publications() {
           <Reveal>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 16px", borderRadius: 999, background: "linear-gradient(135deg, rgba(251, 146, 60, 0.15), rgba(156, 39, 176, 0.1))", marginBottom: 16 }}>
               <span style={{ fontSize: 16 }}>📚</span>
-              <span style={{ fontSize: 12, fontWeight: 700, background: "linear-gradient(135deg, rgb(251, 146, 60), rgb(156, 39, 176))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", letterSpacing: "0.5px" }}>PUBLICATIONS & CONFÉRENCES</span>
+              <span style={{ fontSize: 12, fontWeight: 700, background: "linear-gradient(135deg, rgb(251, 146, 60), rgb(156, 39, 176))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", letterSpacing: "0.5px" }}>{t.publications.subtitle}</span>
             </div>
           </Reveal>
           <Reveal delay={80}>
-            <h2 className="sectionTitle" style={{ fontSize: "clamp(28px, 4vw, 36px)" }}>Livres & Interventions</h2>
+            <h2 className="sectionTitle" style={{ fontSize: "clamp(28px, 4vw, 36px)" }}>{t.publications.title}</h2>
           </Reveal>
         </div>
 
@@ -33,19 +36,19 @@ export default function Publications() {
               <div>
                 <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 12px", borderRadius: 999, background: "rgba(251, 146, 60, 0.15)", marginBottom: 16 }}>
                   <span style={{ fontSize: 14 }}>✨</span>
-                  <span style={{ fontSize: 11, fontWeight: 600, color: "rgb(251, 146, 60)", letterSpacing: "0.5px" }}>NOUVEAU • 2024</span>
+                  <span style={{ fontSize: 11, fontWeight: 600, color: "rgb(251, 146, 60)", letterSpacing: "0.5px" }}>{t.publications.new}</span>
                 </div>
                 <h3 style={{ fontSize: "clamp(20px, 3vw, 24px)", fontWeight: 700, marginBottom: 12, background: "linear-gradient(135deg, rgb(251, 146, 60), rgb(156, 39, 176))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                  Le Fondement du Bonheur
+                  {t.publications.bookTitle}
                 </h3>
                 <p style={{ fontSize: "clamp(14px, 1.8vw, 16px)", lineHeight: 1.6, color: "var(--muted)", marginBottom: 16 }}>
-                  Un livre à la fois profond et universel dans lequel je partage ma vision du <strong style={{ color: "var(--foreground)" }}>bonheur comme la ressource la plus précieuse à cultiver dans la vie humaine</strong>.
+                  {t.publications.bookDescription}
                 </p>
                 <p style={{ fontSize: "clamp(13px, 1.6vw, 15px)", lineHeight: 1.5, color: "var(--muted)", marginBottom: 20 }}>
-                  Au-delà des apparences et des succès matériels, ce livre invite à une réflexion profonde sur ce qui fonde véritablement une vie épanouie, remplie de sens et d&apos;impact durable.
+                  {t.publications.bookDescription2}
                 </p>
                 <div className="actions">
-                  <Link href="#contact" className="btn btnPrimary">Commander le livre</Link>
+                  <Link href="#contact" className="btn btnPrimary">{t.publications.orderBook}</Link>
                 </div>
               </div>
             </div>

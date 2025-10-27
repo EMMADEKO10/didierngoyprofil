@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useTranslation } from "../contexts/TranslationContext";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useTranslation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -40,16 +42,34 @@ export default function Header() {
         }}
       >
         <Link href="#top" className="headerLogo" style={{ fontWeight: 700, letterSpacing: -0.2, whiteSpace: "nowrap" }}>
-          <span className="logoFull">Didier Ngoyi</span>
-          <span className="logoShort">D. Ngoyi</span>
+          <span className="logoFull">Didier Ngoy</span>
+          <span className="logoShort">D. Ngoy</span>
         </Link>
         <div className="headerNav">
           <div className="navLinks">
-            <a href="#about" className="btn navBtn">À propos</a>
-            <a href="#projets" className="btn navBtn">Projets</a>
-            <a href="#livres" className="btn navBtn">Livres</a>
-            <a href="#galerie" className="btn navBtn">Galerie</a>
-            <a href="#contact" className="btn btnPrimary navBtn">Contact</a>
+            <a href="#about" className="btn navBtn">{t.nav.about}</a>
+            <a href="#projets" className="btn navBtn">{t.nav.projects}</a>
+            <a href="#livres" className="btn navBtn">{t.nav.books}</a>
+            <a href="#galerie" className="btn navBtn">{t.nav.gallery}</a>
+            <a href="#contact" className="btn btnPrimary navBtn">{t.nav.contact}</a>
+          </div>
+          <div className="languageSelector" style={{ marginLeft: 16 }}>
+            <select 
+              value={language} 
+              onChange={(e) => setLanguage(e.target.value as 'fr' | 'en')}
+              style={{
+                background: 'var(--background)',
+                color: 'var(--foreground)',
+                border: '1px solid var(--border)',
+                borderRadius: 8,
+                padding: '6px 12px',
+                fontSize: 14,
+                cursor: 'pointer'
+              }}
+            >
+              <option value="fr">🇫🇷 FR</option>
+              <option value="en">🇬🇧 EN</option>
+            </select>
           </div>
           <button 
             className="mobileMenuBtn"
@@ -61,11 +81,29 @@ export default function Header() {
         </div>
         {mobileMenuOpen && (
           <div className="navLinksMobile">
-            <a href="#about" className="btn" onClick={() => setMobileMenuOpen(false)}>À propos</a>
-            <a href="#projets" className="btn" onClick={() => setMobileMenuOpen(false)}>Projets</a>
-            <a href="#livres" className="btn" onClick={() => setMobileMenuOpen(false)}>Livres</a>
-            <a href="#galerie" className="btn" onClick={() => setMobileMenuOpen(false)}>Galerie</a>
-            <a href="#contact" className="btn btnPrimary" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+            <a href="#about" className="btn" onClick={() => setMobileMenuOpen(false)}>{t.nav.about}</a>
+            <a href="#projets" className="btn" onClick={() => setMobileMenuOpen(false)}>{t.nav.projects}</a>
+            <a href="#livres" className="btn" onClick={() => setMobileMenuOpen(false)}>{t.nav.books}</a>
+            <a href="#galerie" className="btn" onClick={() => setMobileMenuOpen(false)}>{t.nav.gallery}</a>
+            <a href="#contact" className="btn btnPrimary" onClick={() => setMobileMenuOpen(false)}>{t.nav.contact}</a>
+            <div style={{ marginTop: 16, textAlign: 'center' }}>
+              <select 
+                value={language} 
+                onChange={(e) => setLanguage(e.target.value as 'fr' | 'en')}
+                style={{
+                  background: 'var(--background)',
+                  color: 'var(--foreground)',
+                  border: '1px solid var(--border)',
+                  borderRadius: 8,
+                  padding: '6px 12px',
+                  fontSize: 14,
+                  cursor: 'pointer'
+                }}
+              >
+                <option value="fr">🇫🇷 FR</option>
+                <option value="en">🇬🇧 EN</option>
+              </select>
+            </div>
           </div>
         )}
       </nav>

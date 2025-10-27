@@ -12,9 +12,9 @@ export default function Profile() {
               <span style={{ fontSize: 18 }}>👤</span>
               <span style={{ fontSize: 13, fontWeight: 600, color: "var(--primary)", letterSpacing: "0.5px" }}>PROFIL COMPLET</span>
             </div>
-             <h2 className="sectionTitle" style={{ marginBottom: 20 }}>Didier Ngoyi Ngubu</h2>
+             <h2 className="sectionTitle" style={{ marginBottom: 20 }}>Didier Ngoy Ngubu</h2>
             <p className="sectionSub" style={{ maxWidth: 800, margin: "0 auto", fontSize: "clamp(15px, 2vw, 17px)", lineHeight: 1.7 }}>
-              Découvrez l&apos;ensemble du parcours et des réalisations de Didier Ngoyi Ngubu, de son engagement social à ses initiatives entrepreneuriales.
+              Découvrez l&apos;ensemble du parcours et des réalisations de Didier Ngoy Ngubu, de son engagement social à ses initiatives entrepreneuriales.
             </p>
           </div>
 
@@ -24,7 +24,7 @@ export default function Profile() {
 
               <h3 style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700, color: "var(--foreground)", marginBottom: 16, marginTop: 32 }}>🕊️ L&apos;Engagé et le Philanthrope</h3>
               <p style={{ marginBottom: 16 }}>
-                 En tant que <strong>président de l&apos;ONG Congo Leadership</strong>, Didier Ngoyi Ngubu œuvre activement pour <strong>former, unir et accompagner les jeunes et les femmes</strong> dans l&apos;entrepreneuriat, tout en menant diverses <strong>actions philanthropiques</strong>.
+                 En tant que <strong>président de l&apos;ONG Congo Leadership</strong>, Didier Ngoy Ngubu œuvre activement pour <strong>former, unir et accompagner les jeunes et les femmes</strong> dans l&apos;entrepreneuriat, tout en menant diverses <strong>actions philanthropiques</strong>.
               </p>
               <p style={{ marginBottom: 32 }}>
                 En <strong>2024</strong>, il publie son premier ouvrage :<br/>
@@ -34,7 +34,7 @@ export default function Profile() {
 
               <h3 style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700, color: "var(--foreground)", marginBottom: 16 }}>🎤 Le Conférencier</h3>
               <p style={{ marginBottom: 16 }}>
-                 Conférencier international <strong>charismatique</strong> et <strong>visionnaire</strong>, Didier Ngoyi Ngubu inspire et captive par la puissance de ses idées et son plaidoyer passionné pour une <strong>Afrique responsable et prospère</strong>.
+                 Conférencier international <strong>charismatique</strong> et <strong>visionnaire</strong>, Didier Ngoy Ngubu inspire et captive par la puissance de ses idées et son plaidoyer passionné pour une <strong>Afrique responsable et prospère</strong>.
               </p>
               <p style={{ marginBottom: 12 }}>
                 Ses interventions abordent des thématiques essentielles telles que :<br/>
@@ -52,7 +52,7 @@ export default function Profile() {
 
               <h3 style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700, color: "var(--foreground)", marginBottom: 16 }}>✍️ En Résumé</h3>
               <p style={{ marginBottom: 16 }}>
-                 Didier Ngoyi Ngubu est bien plus qu&apos;un entrepreneur ou conférencier :<br/>
+                 Didier Ngoy Ngubu est bien plus qu&apos;un entrepreneur ou conférencier :<br/>
                 il est le symbole d&apos;une <strong>Afrique qui croit, qui agit et qui bâtit</strong>.
               </p>
               <p style={{ marginBottom: 16 }}>
@@ -65,7 +65,7 @@ export default function Profile() {
                   <strong>« L&apos;Afrique de demain se construira par ceux qui refusent de subir et choisissent d&apos;agir. »</strong>
                 </p>
                 <p style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "var(--primary)", fontWeight: 600 }}>
-                   — Didier Ngoyi Ngubu
+                   — Didier Ngoy Ngubu
                 </p>
               </div>
             </div>

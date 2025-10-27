@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "../Reveal";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "../../contexts/TranslationContext";
 
 interface HeroProps {
   images: string[];
@@ -12,6 +13,7 @@ interface HeroProps {
 export default function Hero({ images }: HeroProps) {
   const [activeHero, setActiveHero] = useState(0);
   const hoverRef = useRef(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (images.length <= 1) return;
@@ -41,23 +43,23 @@ export default function Hero({ images }: HeroProps) {
                   letterSpacing: "0.3px",
                 }}
               >
-                ✦ Didier Ngoyi Ngubu
+                ✦ Didier Ngoy Ngubu
               </div>
               <h1 className="heroTitle">
-                Entrepreneur, Leader de la jeunesse, Citoyen engagé
+                {t.hero.subtitle}
               </h1>
               <p className="heroSubtitle" style={{ color: "var(--muted)", maxWidth: 720, marginBottom: 16 }}>
-                Président de l&apos;ONG CONGO LEADERSHIP • Initiateur de la plate-forme GÉNÉRATION IMPACT • CEO de BIOTECK AFRICA GROUP • Écrivain & Conférencier.
+                {t.hero.description}
               </p>
               <p style={{ fontSize: 15, fontStyle: "italic", color: "var(--muted)", opacity: 0.9, maxWidth: 720, lineHeight: 1.6 }}>
                 « Un parcours inspirant marqué par la résilience, la foi en soi et la force d&apos;une vision qui refuse d&apos;abandonner. »
               </p>
               <div className="actions" style={{ marginTop: 24 }}>
                 <Link href="#contact" className="btn btnPrimary">
-                  Le contacter
+                  {t.nav.contact}
                 </Link>
                 <Link href="#about" className="btn">
-                  Le connaître
+                  {t.nav.about}
                 </Link>
               </div>
             </div>
