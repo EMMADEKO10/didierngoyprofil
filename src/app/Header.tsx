@@ -16,6 +16,22 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close on ESC and lock body scroll when mobile menu is open
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileMenuOpen(false);
+    };
+    if (mobileMenuOpen) {
+      document.addEventListener("keydown", onKeyDown);
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.removeEventListener("keydown", onKeyDown);
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [mobileMenuOpen]);
+
   return (
     <header
       className="glass"
@@ -47,11 +63,11 @@ export default function Header() {
         </Link>
         <div className="headerNav">
           <div className="navLinks">
-            <a href="#about" className="btn navBtn">{t.nav.about}</a>
-            <a href="#projets" className="btn navBtn">{t.nav.projects}</a>
-            <a href="#livres" className="btn navBtn">{t.nav.books}</a>
-            <a href="#galerie" className="btn navBtn">{t.nav.gallery}</a>
-            <a href="#contact" className="btn btnPrimary navBtn">{t.nav.contact}</a>
+            <a href="#about" className="btn navBtn"><span suppressHydrationWarning>{t.nav.about}</span></a>
+            <a href="#projets" className="btn navBtn"><span suppressHydrationWarning>{t.nav.projects}</span></a>
+            <a href="#livres" className="btn navBtn"><span suppressHydrationWarning>{t.nav.books}</span></a>
+            <a href="#galerie" className="btn navBtn"><span suppressHydrationWarning>{t.nav.gallery}</span></a>
+            <a href="#contact" className="btn btnPrimary navBtn"><span suppressHydrationWarning>{t.nav.contact}</span></a>
           </div>
           <div className="languageSelector" style={{ marginLeft: 16 }}>
             <select 
@@ -75,36 +91,27 @@ export default function Header() {
             className="mobileMenuBtn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobileMenu"
           >
-            ☰
+            <span className={`hamburger ${mobileMenuOpen ? 'isActive' : ''}`} aria-hidden="true">
+              <span className="line" />
+              <span className="line" />
+              <span className="line" />
+            </span>
           </button>
         </div>
         {mobileMenuOpen && (
-          <div className="navLinksMobile">
-            <a href="#about" className="btn" onClick={() => setMobileMenuOpen(false)}>{t.nav.about}</a>
-            <a href="#projets" className="btn" onClick={() => setMobileMenuOpen(false)}>{t.nav.projects}</a>
-            <a href="#livres" className="btn" onClick={() => setMobileMenuOpen(false)}>{t.nav.books}</a>
-            <a href="#galerie" className="btn" onClick={() => setMobileMenuOpen(false)}>{t.nav.gallery}</a>
-            <a href="#contact" className="btn btnPrimary" onClick={() => setMobileMenuOpen(false)}>{t.nav.contact}</a>
-            <div style={{ marginTop: 16, textAlign: 'center' }}>
-              <select 
-                value={language} 
-                onChange={(e) => setLanguage(e.target.value as 'fr' | 'en')}
-                style={{
-                  background: 'var(--background)',
-                  color: 'var(--foreground)',
-                  border: '1px solid var(--border)',
-                  borderRadius: 8,
-                  padding: '6px 12px',
-                  fontSize: 14,
-                  cursor: 'pointer'
-                }}
-              >
-                <option value="fr">🇫🇷 FR</option>
-                <option value="en">🇬🇧 EN</option>
-              </select>
-            </div>
+          <>
+          <div className="menuBackdrop" onClick={() => setMobileMenuOpen(false)} />
+          <div id="mobileMenu" className="navLinksMobile" role="menu">
+            <a href="#about" className="btn" onClick={() => setMobileMenuOpen(false)}><span suppressHydrationWarning>{t.nav.about}</span></a>
+            <a href="#projets" className="btn" onClick={() => setMobileMenuOpen(false)}><span suppressHydrationWarning>{t.nav.projects}</span></a>
+            <a href="#livres" className="btn" onClick={() => setMobileMenuOpen(false)}><span suppressHydrationWarning>{t.nav.books}</span></a>
+            <a href="#galerie" className="btn" onClick={() => setMobileMenuOpen(false)}><span suppressHydrationWarning>{t.nav.gallery}</span></a>
+            <a href="#contact" className="btn btnPrimary" onClick={() => setMobileMenuOpen(false)}><span suppressHydrationWarning>{t.nav.contact}</span></a>
           </div>
+          </>
         )}
       </nav>
     </header>

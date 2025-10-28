@@ -302,16 +302,19 @@ html[data-theme="light"] .glass {
     display: block;
   }
   
-  .navLinks {
-    display: none;
-  }
+  .headerNav .navLinks { display: none !important; }
   
   .navLinksMobile {
     display: flex;
   }
   
-  .mobileMenuBtn {
-    display: block;
+  .headerNav .mobileMenuBtn { display: block !important; }
+  /* Show compact language selector next to hamburger */
+  .languageSelector { display: block !important; }
+  .languageSelector select {
+    height: 34px;
+    padding: 4px 10px;
+    font-size: 13px;
   }
   
   .headerNav {
@@ -330,6 +333,18 @@ html[data-theme="light"] .glass {
   .aboutMissionCard {
     padding: 20px !important;
   }
+}
+
+/* Expand header's hamburger breakpoint to include small tablets */
+@media (max-width: 1024px) {
+  /* Header: prefer hamburger over horizontal scroll */
+  .logoFull { display: none; }
+  .logoShort { display: block; }
+  .navLinks { display: none; }
+  .mobileMenuBtn { display: block; }
+  .headerNav { gap: 8px; }
+  /* Hide desktop language selector; use the one in mobile menu */
+  .languageSelector { display: none; }
 }
 
 /* Tablet breakpoint */
@@ -353,25 +368,15 @@ html[data-theme="light"] .glass {
   }
   
   /* Header tablet styles */
-  .logoFull {
-    display: block;
-  }
-  
-  .logoShort {
-    display: none;
-  }
-  
-  .navLinks {
-    display: flex;
-  }
-  
-  .navLinksMobile {
-    display: none;
-  }
-  
-  .mobileMenuBtn {
-    display: none;
-  }
+  /* Use hamburger menu on tablets too to avoid horizontal scroll */
+  .logoFull { display: none; }
+  .logoShort { display: block; }
+  .headerNav .navLinks { display: none !important; }
+  .navLinksMobile { display: flex; }
+  .headerNav .mobileMenuBtn { display: block !important; }
+  /* Show language selector next to hamburger on tablets */
+  .languageSelector { display: block !important; }
+  .languageSelector select { height: 34px; padding: 4px 10px; font-size: 13px; }
   
   .navBtn {
     height: 38px;
@@ -778,6 +783,72 @@ html[data-theme="light"] .glass {
   margin-top: 8px;
   box-shadow: var(--glow);
   z-index: 100;
+  transform: translateY(-6px);
+  opacity: 0;
+  animation: menuSlideDown 220ms ease forwards;
+  max-height: 70vh;
+  overflow: auto;
+}
+
+.navLinksMobile .btn { width: 100%; }
+
+@keyframes menuSlideDown {
+  from {
+    transform: translateY(-6px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.menuBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 90;
+  backdrop-filter: blur(1px);
+}
+
+.hamburger {
+  display: inline-block;
+  width: 22px;
+  height: 16px;
+  position: relative;
+}
+
+.hamburger .line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 220ms ease, opacity 180ms ease, top 220ms ease;
+}
+
+.hamburger .line:nth-child(1) { top: 0; }
+.hamburger .line:nth-child(2) { top: 7px; }
+.hamburger .line:nth-child(3) { top: 14px; }
+
+.hamburger.isActive .line:nth-child(1) {
+  top: 7px;
+  transform: rotate(45deg);
+}
+
+.hamburger.isActive .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.isActive .line:nth-child(3) {
+  top: 7px;
+  transform: rotate(-45deg);
+}
+
+/* Ensure mobile menu displays on small screens (override later base rule) */
+@media (max-width: 1024px) {
+  .navLinksMobile { display: flex !important; }
 }
 
 .heroImg {

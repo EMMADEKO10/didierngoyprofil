@@ -116,7 +116,8 @@ export default function Agriculture() {
                     {t.agriculture.joinDescription}
                   </p>
                   <a 
-                    href="http://bit.ly/4qv4Fuh" 
+                    // href="http://bit.ly/4qv4Fuh" 
+                    href="https://docs.google.com/forms/d/15WnyGui2q2C0k05NhN_ajMgDFu_-1IHicGyn4Q3E6wk/viewform" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     style={{
