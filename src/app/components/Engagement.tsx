@@ -51,11 +51,7 @@ export default function Engagement() {
               </div>
               <h2 className="sectionTitle" style={{ marginBottom: 20 }}>{t.engagement.title}</h2>
               <p className="sectionSub" style={{ maxWidth: 800, margin: "0 auto", fontSize: "clamp(15px, 2vw, 17px)", lineHeight: 1.7 }}>
-<<<<<<< HEAD
-                Découvrez l&apos;engagement social et l&apos;expertise de Didier Ngoyi Ngubu en tant que conférencier international.
-=======
                 {t.engagement.subtitle}
->>>>>>> main
               </p>
             </div>
 
@@ -78,11 +74,7 @@ export default function Engagement() {
               }}>
                 <h3 style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700, color: "var(--foreground)", marginBottom: 8, marginTop: 16 }}>{t.engagement.engagedTitle}</h3>
                 <p style={{ marginBottom: 8 }}>
-<<<<<<< HEAD
-                    En tant que <strong>président de l&apos;ONG Congo Leadership</strong>, Didier Ngoyi Ngubu œuvre activement pour <strong>former, unir et accompagner les jeunes et les femmes</strong> dans l&apos;entrepreneuriat, tout en menant diverses <strong>actions philanthropiques</strong>.
-=======
                     {t.engagement.leadership}
->>>>>>> main
                 </p>
                 <p style={{ marginBottom: 16 }}>
                   {t.engagement.book2024}<br/>
@@ -92,31 +84,19 @@ export default function Engagement() {
 
                 <h3 style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700, color: "var(--foreground)", marginBottom: 8, marginTop: 24 }}>{t.engagement.speakerTitle}</h3>
                 <p style={{ marginBottom: 8 }}>
-<<<<<<< HEAD
-                    Conférencier international <strong>charismatique</strong> et <strong>visionnaire</strong>, Didier Ngoyi Ngubu inspire et captive son public par la puissance de ses idées, la profondeur de sa réflexion et son plaidoyer passionné pour une <strong>Afrique responsable et prospère</strong>.
-=======
                     {t.engagement.speaker}
->>>>>>> main
                 </p>
                 <p style={{ marginBottom: 8 }}>
                   {t.engagement.expertise}
                 </p>
                 <p style={{ marginBottom: 8 }}>
-<<<<<<< HEAD
-                    À travers ses interventions, Didier Ngoyi Ngubu aborde des thématiques essentielles telles que le <strong>leadership transformationnel</strong>, la <strong>culture de l&apos;excellence</strong>, l&apos;<strong>entrepreneuriat inclusif</strong>, l&apos;<strong>éthique du travail</strong>, et la <strong>responsabilité citoyenne</strong>. Il a partagé sa vision dans de nombreuses conférences, panels et programmes de formation, aussi bien en Afrique qu&apos;à l&apos;international, devant des étudiants, entrepreneurs, décideurs politiques et acteurs sociaux.
-=======
                     {t.engagement.topics}
->>>>>>> main
                 </p>
                 <p style={{ marginBottom: 8 }}>
                   {t.engagement.message}
                 </p>
                 <p style={{ marginBottom: 0 }}>
-<<<<<<< HEAD
-                  Sa capacité à allier <strong>inspiration et pragmatisme</strong>, à traduire les valeurs africaines en leviers de progrès, fait de Didier Ngoyi Ngubu un orateur recherché et respecté, symbole d&apos;une génération qui choisit d&apos;agir, de servir et de bâtir.
-=======
                   {t.engagement.impact}
->>>>>>> main
                 </p>
               </div>
 
@@ -147,11 +127,7 @@ export default function Engagement() {
                 {/* Image */}
                 <Image 
                   src="/galerie/557772313_1222146913266567_1373992692175798815_n.jpg" 
-<<<<<<< HEAD
-                      alt="Didier Ngoyi Ngubu - Conférencier et Leader Engagé"
-=======
                       alt={t.alt.engagementImage}
->>>>>>> main
                   fill
                   style={{
                     objectFit: "cover",
@@ -224,11 +200,7 @@ export default function Engagement() {
                 
                 <Image 
                   src="/galerie/557772313_1222146913266567_1373992692175798815_n.jpg" 
-<<<<<<< HEAD
-                      alt="Didier Ngoyi Ngubu - Conférencier et Leader Engagé"
-=======
                       alt={t.alt.engagementImage}
->>>>>>> main
                   fill
                   style={{
                     objectFit: "cover",

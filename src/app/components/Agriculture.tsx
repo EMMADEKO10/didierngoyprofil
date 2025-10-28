@@ -49,17 +49,10 @@ export default function Agriculture() {
                 <span style={{ fontSize: 18 }}>🌱</span>
                 <span style={{ fontSize: 13, fontWeight: 600, color: "var(--primary)", letterSpacing: "0.5px" }}>AGRICULTURE & STRUCTURES</span>
               </div>
-<<<<<<< HEAD
-                  <h2 className="sectionTitle" style={{ marginBottom: 20 }}>L&apos;Agriculteur et Homme de Terrain</h2>
-                  <p className="sectionSub" style={{ maxWidth: 800, margin: "0 auto", fontSize: "clamp(15px, 2vw, 17px)", lineHeight: 1.7 }}>
-                    Découvrez l&apos;engagement de Didier Ngoyi Ngubu pour l&apos;agriculture africaine et les structures qu&apos;il dirige.
-                  </p>
-=======
               <h2 className="sectionTitle" style={{ marginBottom: 20 }}>{t.agriculture.title}</h2>
               <p className="sectionSub" style={{ maxWidth: 800, margin: "0 auto", fontSize: "clamp(15px, 2vw, 17px)", lineHeight: 1.7 }}>
                  {t.agriculture.subtitle}
               </p>
->>>>>>> main
             </div>
 
             {/* Layout responsive avec photo et contenu */}
@@ -81,12 +74,7 @@ export default function Agriculture() {
               }}>
                 <h3 style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700, color: "var(--foreground)", marginBottom: 8, marginTop: 16 }}>{t.agriculture.farmerTitle}</h3>
                 <p style={{ marginBottom: 8 }}>
-<<<<<<< HEAD
-                    Entrepreneur social passionné par l&apos;<strong>agriculture</strong> et la <strong>souveraineté alimentaire</strong>, Didier Ngoyi Ngubu est le fondateur de <strong>Bioteck Africa Group</strong>.<br/>
-                  Cette entreprise promeut la <strong>production locale</strong>, la <strong>transformation agroalimentaire</strong> et la <strong>valorisation des produits africains</strong>.
-=======
                    {t.agriculture.bioteck}
->>>>>>> main
                 </p>
                 <p style={{ marginBottom: 8 }}>
                   {t.agriculture.bioteckCenter}<br/>
@@ -104,16 +92,7 @@ export default function Agriculture() {
                 
                 <h4 style={{ fontSize: "clamp(16px, 2vw, 18px)", fontWeight: 600, color: "var(--primary)", marginBottom: 8, marginTop: 16 }}>{t.agriculture.congoLeadershipTitle}</h4>
                 <p style={{ marginBottom: 8 }}>
-<<<<<<< HEAD
-                  <strong>Congo Leadership</strong> est une organisation non gouvernementale fondée par Didier Ngoyi Ngubu, avec pour mission de <strong>réveiller le potentiel de la jeunesse congolaise et africaine</strong>.<br/>
-                  L&apos;organisation forme et encadre hommes et femmes à travers :<br/>
-                  - Des <strong>formations pratiques</strong><br/>
-                  - Des <strong>ateliers de leadership et d&apos;entrepreneuriat</strong><br/>
-                  - Des <strong>concours et programmes de financement</strong><br/>
-                  - Des <strong>actions philanthropiques</strong>
-=======
                    {t.agriculture.congoLeadership}
->>>>>>> main
                 </p>
                 <p style={{ marginBottom: 16, fontStyle: "italic" }}>
                   {t.agriculture.congoLeadershipQuote}
@@ -207,13 +186,8 @@ export default function Agriculture() {
                 
                 {/* Image */}
                 <Image 
-<<<<<<< HEAD
-                  src="/projet/fermier/didier-ngoy-moto.jpg" 
-                      alt="Didier Ngoyi Ngubu - Agriculteur et Leader des Structures"
-=======
                   src="/projet/fermier/WhatsApp Image 2025-10-25 à 09.36.57_0f6067d4.jpg" 
                    alt={t.alt.agricultureImage}
->>>>>>> main
                   fill
                   style={{
                     objectFit: "cover",
@@ -285,13 +259,8 @@ export default function Agriculture() {
                 }} />
                 
                 <Image 
-<<<<<<< HEAD
-                  src="/projet/agriculteur/WhatsApp Image 2025-10-13 à 17.25.33_9efeb24d.jpg" 
-                      alt="Didier Ngoyi Ngubu - Agriculteur et Leader des Structures"
-=======
                   src="/projet/fermier/WhatsApp Image 2025-10-25 à 09.36.57_0f6067d4.jpg" 
                    alt={t.alt.agricultureImage}
->>>>>>> main
                   fill
                   style={{
                     objectFit: "cover",
