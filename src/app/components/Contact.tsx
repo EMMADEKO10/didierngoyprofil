@@ -1,17 +1,20 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslation } from "../../contexts/TranslationContext";
 
 export default function Contact() {
+  const { t } = useTranslation();
+  
   return (
     <section id="contact" style={{ padding: "4rem 0" }}>
       <div className="container">
         <div className="contactCard">
           <div className="contactGrid">
             <div>
-              <h2 className="sectionTitle">Travaillons ensemble</h2>
-              <p className="sectionSub">
-                Vous avez un projet, une initiative sociale ou un événement ? Contactez-moi.
+              <h2 className="sectionTitle" style={{ marginBottom: 10 }}>{t.contact.title}</h2>
+              <p className="sectionSub" style={{ marginBottom: 0 }}>
+                {t.contact.description}
               </p>
             </div>
             <div>
@@ -37,8 +40,8 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <footer style={{ marginTop: "2rem", color: "var(--muted)", fontSize: "0.875rem", textAlign: "center" }}>
-          © {new Date().getFullYear()} Didier Ngoyi Ngubu. Tous droits réservés.
+        <footer style={{ marginTop: 40, color: "var(--muted)", fontSize: 14, textAlign: "center", opacity: 0.7 }}>
+           © {new Date().getFullYear()} Didier Ngoy Ngubu. {t.contact.copyright}
         </footer>
       </div>
     </section>

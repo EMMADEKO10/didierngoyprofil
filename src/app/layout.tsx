@@ -4,6 +4,7 @@ import "./globals.css";
 import "./simple-styles.css";
 import ThemeToggle from "./ThemeToggle";
 import Header from "./Header";
+import { TranslationProvider } from "../contexts/TranslationContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,12 +17,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Didier Ngoyi Ngubu | Entrepreneur, Leader & Conférencier",
+  title: "Didier Ngoy Ngubu | Entrepreneur, Leader & Conférencier",
   description:
-    "Portfolio officiel de Didier Ngoyi Ngubu – Entrepreneur congolais, leader de la jeunesse, président de CONGO LEADERSHIP, initiateur de GÉNÉRATION IMPACT, CEO de BIOTECK AFRICA GROUP, écrivain et conférencier.",
+    "Portfolio officiel de Didier Ngoy Ngubu – Entrepreneur congolais, leader de la jeunesse, président de CONGO LEADERSHIP, initiateur de GÉNÉRATION IMPACT, CEO de BIOTECK AFRICA GROUP, écrivain et conférencier.",
   metadataBase: new URL("https://didierngoy-portfolio.example"),
   openGraph: {
-    title: "Didier Ngoyi Ngubu | Entrepreneur, Leader & Conférencier",
+    title: "Didier Ngoy Ngubu | Entrepreneur, Leader & Conférencier",
     description:
       "Entrepreneur, leader de la jeunesse et citoyen engagé. Découvrez ses projets, missions et engagements.",
     type: "website",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Didier Ngoyi Ngubu | Entrepreneur, Leader & Conférencier",
+    title: "Didier Ngoy Ngubu | Entrepreneur, Leader & Conférencier",
     description:
       "Entrepreneur, leader de la jeunesse et citoyen engagé. Découvrez ses projets, missions et engagements.",
   },
@@ -46,9 +47,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Header />
-        <div id="app-root">{children}</div>
-        <ThemeToggle />
+        <TranslationProvider>
+          <Header />
+          <div id="app-root">{children}</div>
+          <ThemeToggle />
+        </TranslationProvider>
       </body>
     </html>
   );

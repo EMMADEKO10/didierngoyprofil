@@ -4,12 +4,14 @@ import Image from "next/image";
 import Reveal from "../Reveal";
 import { useEffect, useRef, useState } from "react";
 import Lightbox from "../Lightbox";
+import { useTranslation } from "../../contexts/TranslationContext";
 
 interface ProjectsProps {
   images: string[];
 }
 
 export default function Projects({ images }: ProjectsProps) {
+  const { t } = useTranslation();
   const [projectsStart, setProjectsStart] = useState(0);
   const projectsHoverRef = useRef(false);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
@@ -27,9 +29,9 @@ export default function Projects({ images }: ProjectsProps) {
     <section id="projets" style={{ padding: "clamp(40px, 6vw, 60px) 0" }}>
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: 36 }}>
-          <h2 className="sectionTitle">Projets & Initiatives</h2>
+          <h2 className="sectionTitle">{t.projects.title}</h2>
           <p className="sectionSub" style={{ marginLeft: "auto", marginRight: "auto", maxWidth: 600 }}>
-            Quelques actions phares au service de la jeunesse et du développement du Congo
+            {t.projects.subtitle}
           </p>
         </div>
         <div className="galleryGrid projectsGrid" onMouseEnter={() => (projectsHoverRef.current = true)} onMouseLeave={() => (projectsHoverRef.current = false)}>
@@ -40,7 +42,7 @@ export default function Projects({ images }: ProjectsProps) {
                 <div className="projectCard">
                   <div style={{ position: "relative", aspectRatio: "4/3", cursor: "zoom-in" }} className="glass card" onClick={() => setLightboxSrc(src)}>
                     <div style={{ position: "absolute", inset: 0, borderRadius: 18, overflow: "hidden" }}>
-                      <Image src={src} alt={`Projet ${idx + 1}`} fill style={{ objectFit: "cover", transition: "transform 6s ease" }} />
+                      <Image src={src} alt={`${t.projects.alt} ${idx + 1}`} fill style={{ objectFit: "cover", transition: "transform 6s ease" }} />
                     </div>
                   </div>
                 </div>

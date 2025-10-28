@@ -1,8 +1,11 @@
 "use client";
 
 import Reveal from "../Reveal";
+import { useTranslation } from "../../contexts/TranslationContext";
 
 export default function Presentation() {
+  const { t } = useTranslation();
+  
   return (
     <section id="presentation" style={{ padding: "clamp(30px, 4vw, 40px) 0", position: "relative", overflow: "hidden", background: "linear-gradient(180deg, rgba(76, 201, 240, 0.02), transparent)" }}>
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 20% 30%, rgba(76, 201, 240, 0.05), transparent 50%)", pointerEvents: "none" }} />
@@ -17,9 +20,9 @@ export default function Presentation() {
             </div>
           </Reveal>
           <Reveal delay={80}>
-            <h2 className="sectionTitle" style={{ fontSize: "clamp(32px, 5vw, 48px)", marginBottom: 16 }}>Mon Parcours & Vision</h2>
+            <h2 className="sectionTitle" style={{ fontSize: "clamp(32px, 5vw, 48px)", marginBottom: 16 }}>{t.presentation.title}</h2>
             <p className="sectionSub" style={{ maxWidth: 700, margin: "0 auto", fontSize: "clamp(15px, 2vw, 17px)" }}>
-              Un engagement profond pour transformer la jeunesse africaine en moteur du développement
+              {t.presentation.subtitle}
             </p>
           </Reveal>
         </div>
@@ -29,15 +32,10 @@ export default function Presentation() {
           <div className="glass card" style={{ padding: "clamp(20px, 3vw, 28px)", borderRadius: 20, marginBottom: "clamp(24px, 4vw, 32px)", background: "linear-gradient(135deg, rgba(76, 201, 240, 0.03), rgba(247, 37, 133, 0.02))" }}>
             <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 24, display: "flex", alignItems: "center", gap: 10 }}>
               <span style={{ fontSize: 22 }}>📈</span>
-              Parcours Professionnel
+              {t.presentation.professionalPath}
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-              {[
-                { year: "2024", role: "Auteur", org: "Le Fondement du Bonheur", desc: "Publication de son premier ouvrage, un livre profond et universel sur la vision du bonheur comme ressource la plus précieuse à cultiver." },
-                { year: "2019", role: "CEO & Fondateur", org: "BIOTECK AFRICA GROUP", desc: "Lancement d'une structure multisectorielle : agriculture, transformation agroalimentaire, immobilier, transport et restauration." },
-                { year: "2019", role: "Président", org: "ONG CONGO LEADERSHIP", desc: "Formation, union et accompagnement des jeunes et femmes dans l'entrepreneuriat, avec actions philanthropiques continues." },
-                { year: "Avant", role: "Entrepreneur Serial", org: "NEW VISION SERVICE & PANTHÈRE SECURITY", desc: "Création d'entreprises de formation professionnelle, accompagnement des femmes et société de gardiennage revendue avec succès." },
-              ].map((item, i) => (
+              {t.presentation.timeline.map((item, i) => (
                 <div key={i} style={{ display: "flex", gap: 16, position: "relative" }}>
                   <div style={{ display: "flex", flexDirection: "column", alignItems: "center", minWidth: 70 }}>
                     <div className="glass" style={{ padding: "6px 12px", borderRadius: 999, background: "linear-gradient(135deg, var(--primary), var(--accent))", color: "white", fontWeight: 700, fontSize: 12, boxShadow: "0 3px 15px rgba(76, 201, 240, 0.3)" }}>
@@ -60,27 +58,27 @@ export default function Presentation() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 28 }}>
           {[
             { 
-              title: "Leadership Transformationnel", 
+              title: t.presentation.leadership, 
               icon: "👔",
-              skills: ["Formation des jeunes", "Culture de l'excellence", "Responsabilité citoyenne", "Autonomisation"],
+              skills: t.presentation.skillsList.leadership,
               gradient: "76, 201, 240"
             },
             { 
-              title: "Entrepreneuriat & Agriculture", 
+              title: t.presentation.entrepreneurship, 
               icon: "🌾",
-              skills: ["Agro-business", "Souveraineté alimentaire", "Transformation locale", "Formation agricole"],
+              skills: t.presentation.skillsList.entrepreneurship,
               gradient: "34, 197, 94"
             },
             { 
-              title: "Conférencier International", 
+              title: t.presentation.speaker, 
               icon: "🎤",
-              skills: ["Leadership africain", "Développement personnel", "Plaidoyer visionnaire", "Inspiration collective"],
+              skills: t.presentation.skillsList.speaker,
               gradient: "247, 37, 133"
             },
             { 
-              title: "Activisme & Philanthropie", 
+              title: t.presentation.activism, 
               icon: "",
-              skills: ["Défense des droits", "Actions sociales", "Éthique du travail", "Impact communautaire"],
+              skills: t.presentation.skillsList.activism,
               gradient: "156, 39, 176"
             },
           ].map((cat, i) => (

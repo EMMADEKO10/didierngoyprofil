@@ -1,6 +1,11 @@
 "use client";
 
 import Image from "next/image";
+<<<<<<< HEAD
+=======
+import Reveal from "../Reveal";
+import { useTranslation } from "../../contexts/TranslationContext";
+>>>>>>> main
 
 // Styles CSS pour le responsive design
 const styles = `
@@ -34,9 +39,12 @@ const styles = `
 `;
 
 export default function About() {
+  const { t } = useTranslation();
+  
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: styles }} />
+<<<<<<< HEAD
       <section id="about" style={{ padding: "4rem 0" }}>
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
@@ -44,6 +52,17 @@ export default function About() {
               À PROPOS DE DIDIER
             </div>
             <h2 className="sectionTitle">Didier Ngoyi Ngubu</h2>
+=======
+    <section id="about" style={{ padding: "clamp(30px, 4vw, 40px) 0", position: "relative", overflow: "hidden" }}>
+      <div className="container" style={{ position: "relative", zIndex: 2 }}>
+        <Reveal>
+          <div style={{ textAlign: "center", marginBottom: "clamp(24px, 4vw, 32px)" }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 16px", borderRadius: 999, background: "linear-gradient(135deg, rgba(76, 201, 240, 0.15), rgba(247, 37, 133, 0.1))", marginBottom: 20 }}>
+              <span style={{ fontSize: 18 }}></span>
+              <span style={{ fontSize: 13, fontWeight: 600, color: "var(--primary)", letterSpacing: "0.5px" }}>{t.about.subtitle}</span>
+            </div>
+            <h2 className="sectionTitle" style={{ marginBottom: 20 }}>{t.about.title}</h2>
+>>>>>>> main
           </div>
 
           {/* Layout responsive avec photo et contenu */}
@@ -55,6 +74,7 @@ export default function About() {
               lineHeight: 1.6,
               color: "var(--muted)"
             }}>
+<<<<<<< HEAD
               <p style={{ marginBottom: "1rem" }}>
                 Didier <strong>Ngoyi Ngubu</strong> est un <strong>citoyen engagé</strong>, <strong>auteur</strong>, <strong>entrepreneur social</strong> et <strong>conférencier international</strong>, représentant une nouvelle génération de leaders africains portés par la vision d&apos;une <strong>Afrique unie, entreprenante et consciente de son potentiel</strong>.
               </p>
@@ -74,11 +94,29 @@ export default function About() {
               </p>
               <p style={{ marginBottom: "0.5rem" }}>
                 Plus tard, il cofonde <strong>Panthère Security</strong>, une société de gardiennage et de protection, qu&apos;il revend avec succès.
+=======
+              <p style={{ marginBottom: 8 }}>
+                {t.about.description}
+              </p>
+
+              <h3 style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700, color: "var(--foreground)", marginBottom: 8, marginTop: 16 }}>{t.about.journeyTitle}</h3>
+              <p style={{ marginBottom: 8 }}>
+                {t.about.story}
+              </p>
+              <p style={{ marginBottom: 16 }}>
+                {t.about.university}
+              </p>
+
+              {/* <h3 style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700, color: "var(--foreground)", marginBottom: 14 }}> L&apos;Entrepreneur Visionnaire</h3> */}
+              <p style={{ marginBottom: 8 }}>
+                {t.about.newVision}
+              </p>
+              <p style={{ marginBottom: 8 }}>
+                {t.about.panthere}
+>>>>>>> main
               </p>
               <p style={{ marginBottom: 0 }}>
-                En <strong>2019</strong>, il crée <strong>Bioteck Africa Groupe</strong>, une structure multisectorielle active dans :<br/>
-                - L&apos;agriculture, La transformation agroalimentaire, L&apos;immobilier, Le transport, La restauration<br/><br/>
-                Cette entreprise témoigne de sa <strong>foi en un développement africain intégré et durable</strong>.
+                {t.about.bioteck}
               </p>
             </div>
 
@@ -96,7 +134,11 @@ export default function About() {
             }}>
               <Image 
                 src="/hirosection/WhatsApp Image 2025-10-18 à 10.21.22_6ff399ae.jpg" 
+<<<<<<< HEAD
                 alt="Didier Ngoyi Ngubu - Entrepreneur, Conférencier et Leader Africain"
+=======
+                alt={t.alt.aboutImage}
+>>>>>>> main
                 fill
                 style={{
                   objectFit: "cover",
@@ -124,13 +166,13 @@ export default function About() {
                   color: "var(--primary)",
                   marginBottom: "0.25rem"
                 }}>
-                  🌟 Visionnaire Africain
+                  {t.about.badgeTitle}
                 </div>
                 <div style={{ 
                   fontSize: "0.75rem", 
                   color: "var(--muted)"
                 }}>
-                  Entrepreneur • Conférencier • Leader
+                  {t.about.badgeSubtitle}
                 </div>
               </div>
             </div>
@@ -157,7 +199,11 @@ export default function About() {
             }}>
               <Image 
                 src="/hirosection/WhatsApp Image 2025-10-18 à 10.21.22_6ff399ae.jpg" 
+<<<<<<< HEAD
                 alt="Didier Ngoyi Ngubu - Entrepreneur, Conférencier et Leader Africain"
+=======
+                alt={t.alt.aboutImage}
+>>>>>>> main
                 fill
                 style={{
                   objectFit: "cover",
@@ -184,13 +230,13 @@ export default function About() {
                   color: "var(--primary)",
                   marginBottom: "0.125rem"
                 }}>
-                  🌟 Visionnaire Africain
+                  {t.about.badgeTitle}
                 </div>
                 <div style={{ 
                   fontSize: "0.625rem", 
                   color: "var(--muted)"
                 }}>
-                  Entrepreneur • Conférencier • Leader
+                  {t.about.badgeSubtitle}
                   </div>
               </div>
             </div>

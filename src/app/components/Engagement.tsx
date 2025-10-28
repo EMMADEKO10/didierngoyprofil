@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Reveal from "../Reveal";
+import { useTranslation } from "../../contexts/TranslationContext";
 
 // Styles CSS pour le responsive design
 const styles = `
@@ -35,6 +36,8 @@ const styles = `
 `;
 
 export default function Engagement() {
+  const { t } = useTranslation();
+  
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: styles }} />
@@ -44,11 +47,15 @@ export default function Engagement() {
             <div style={{ textAlign: "center", marginBottom: "clamp(24px, 4vw, 32px)" }}>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 16px", borderRadius: 999, background: "linear-gradient(135deg, rgba(76, 201, 240, 0.15), rgba(247, 37, 133, 0.1))", marginBottom: 20 }}>
                 <span style={{ fontSize: 18 }}>🕊️</span>
-                <span style={{ fontSize: 13, fontWeight: 600, color: "var(--primary)", letterSpacing: "0.5px" }}>ENGAGEMENT & CONFÉRENCIER</span>
+                <span style={{ fontSize: 13, fontWeight: 600, color: "var(--primary)", letterSpacing: "0.5px" }}>{t.engagement.badge}</span>
               </div>
-              <h2 className="sectionTitle" style={{ marginBottom: 20 }}>L&apos;Engagé et le Philanthrope</h2>
+              <h2 className="sectionTitle" style={{ marginBottom: 20 }}>{t.engagement.title}</h2>
               <p className="sectionSub" style={{ maxWidth: 800, margin: "0 auto", fontSize: "clamp(15px, 2vw, 17px)", lineHeight: 1.7 }}>
+<<<<<<< HEAD
                 Découvrez l&apos;engagement social et l&apos;expertise de Didier Ngoyi Ngubu en tant que conférencier international.
+=======
+                {t.engagement.subtitle}
+>>>>>>> main
               </p>
             </div>
 
@@ -69,31 +76,47 @@ export default function Engagement() {
                 color: "var(--muted)",
                 minWidth: 0
               }}>
-                <h3 style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700, color: "var(--foreground)", marginBottom: 8, marginTop: 16 }}>🕊️ L&apos;Engagé et le Philanthrope</h3>
+                <h3 style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700, color: "var(--foreground)", marginBottom: 8, marginTop: 16 }}>{t.engagement.engagedTitle}</h3>
                 <p style={{ marginBottom: 8 }}>
+<<<<<<< HEAD
                     En tant que <strong>président de l&apos;ONG Congo Leadership</strong>, Didier Ngoyi Ngubu œuvre activement pour <strong>former, unir et accompagner les jeunes et les femmes</strong> dans l&apos;entrepreneuriat, tout en menant diverses <strong>actions philanthropiques</strong>.
+=======
+                    {t.engagement.leadership}
+>>>>>>> main
                 </p>
                 <p style={{ marginBottom: 16 }}>
-                  En <strong>2024</strong>, il publie son premier ouvrage :<br/>
-                  <em><strong>« Le Fondement du Bonheur »</strong>,<br/>
-                  un livre à la fois profond et universel où il partage sa vision du bonheur comme <strong>la ressource la plus précieuse à cultiver</strong> dans la vie humaine.</em>
+                  {t.engagement.book2024}<br/>
+                  <em><strong>{t.engagement.bookTitle}</strong>,<br/>
+                  {t.engagement.bookDescription}</em>
                 </p>
 
-                <h3 style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700, color: "var(--foreground)", marginBottom: 8, marginTop: 24 }}>🎤 Le Conférencier</h3>
+                <h3 style={{ fontSize: "clamp(18px, 2.5vw, 22px)", fontWeight: 700, color: "var(--foreground)", marginBottom: 8, marginTop: 24 }}>{t.engagement.speakerTitle}</h3>
                 <p style={{ marginBottom: 8 }}>
+<<<<<<< HEAD
                     Conférencier international <strong>charismatique</strong> et <strong>visionnaire</strong>, Didier Ngoyi Ngubu inspire et captive son public par la puissance de ses idées, la profondeur de sa réflexion et son plaidoyer passionné pour une <strong>Afrique responsable et prospère</strong>.
+=======
+                    {t.engagement.speaker}
+>>>>>>> main
                 </p>
                 <p style={{ marginBottom: 8 }}>
-                  Reconnu pour son expertise en <strong>leadership, entrepreneuriat social, développement personnel</strong> et <strong>autonomisation de la jeunesse</strong>, il apporte une perspective ancrée dans l&apos;action et l&apos;expérience de terrain. Sa voix porte haut la vision d&apos;une <strong>jeunesse africaine consciente de son rôle</strong> dans la transformation du continent.
+                  {t.engagement.expertise}
                 </p>
                 <p style={{ marginBottom: 8 }}>
+<<<<<<< HEAD
                     À travers ses interventions, Didier Ngoyi Ngubu aborde des thématiques essentielles telles que le <strong>leadership transformationnel</strong>, la <strong>culture de l&apos;excellence</strong>, l&apos;<strong>entrepreneuriat inclusif</strong>, l&apos;<strong>éthique du travail</strong>, et la <strong>responsabilité citoyenne</strong>. Il a partagé sa vision dans de nombreuses conférences, panels et programmes de formation, aussi bien en Afrique qu&apos;à l&apos;international, devant des étudiants, entrepreneurs, décideurs politiques et acteurs sociaux.
+=======
+                    {t.engagement.topics}
+>>>>>>> main
                 </p>
                 <p style={{ marginBottom: 8 }}>
-                  Qu&apos;il s&apos;adresse à des jeunes en quête de repères, à des leaders d&apos;entreprise ou à des institutions, son message a toujours le même effet : <strong>réveiller la conscience, ranimer la foi et provoquer le passage à l&apos;action</strong>.
+                  {t.engagement.message}
                 </p>
                 <p style={{ marginBottom: 0 }}>
+<<<<<<< HEAD
                   Sa capacité à allier <strong>inspiration et pragmatisme</strong>, à traduire les valeurs africaines en leviers de progrès, fait de Didier Ngoyi Ngubu un orateur recherché et respecté, symbole d&apos;une génération qui choisit d&apos;agir, de servir et de bâtir.
+=======
+                  {t.engagement.impact}
+>>>>>>> main
                 </p>
               </div>
 
@@ -124,7 +147,11 @@ export default function Engagement() {
                 {/* Image */}
                 <Image 
                   src="/galerie/557772313_1222146913266567_1373992692175798815_n.jpg" 
+<<<<<<< HEAD
                       alt="Didier Ngoyi Ngubu - Conférencier et Leader Engagé"
+=======
+                      alt={t.alt.engagementImage}
+>>>>>>> main
                   fill
                   style={{
                     objectFit: "cover",
@@ -154,14 +181,14 @@ export default function Engagement() {
                     color: "var(--primary)",
                     marginBottom: "4px"
                   }}>
-                    🎤 Conférencier International
+                    {t.engagement.badgeTitle}
                   </div>
                   <div style={{ 
                     fontSize: "clamp(10px, 1.2vw, 12px)", 
                     color: "var(--muted)",
                     lineHeight: 1.4
                   }}>
-                    Leadership • Entrepreneuriat • Engagement
+                    {t.engagement.badgeSubtitle}
                   </div>
                 </div>
               </div>
@@ -197,7 +224,11 @@ export default function Engagement() {
                 
                 <Image 
                   src="/galerie/557772313_1222146913266567_1373992692175798815_n.jpg" 
+<<<<<<< HEAD
                       alt="Didier Ngoyi Ngubu - Conférencier et Leader Engagé"
+=======
+                      alt={t.alt.engagementImage}
+>>>>>>> main
                   fill
                   style={{
                     objectFit: "cover",
@@ -226,14 +257,14 @@ export default function Engagement() {
                     color: "var(--primary)",
                     marginBottom: "2px"
                   }}>
-                    🎤 Conférencier International
+                    {t.engagement.badgeTitle}
                   </div>
                   <div style={{ 
                     fontSize: "clamp(8px, 1vw, 10px)", 
                     color: "var(--muted)",
                     lineHeight: 1.3
                   }}>
-                    Leadership • Entrepreneuriat • Engagement
+                    {t.engagement.badgeSubtitle}
                   </div>
                 </div>
               </div>
